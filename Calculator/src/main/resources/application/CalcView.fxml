@@ -36,8 +36,8 @@
   </rowConstraints>
    <children>
       <TextField id="inputField" fx:id="inputField" prefHeight="26.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-      <TextField id="totalField" fx:id="totalField" prefHeight="25.0" prefWidth="316.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-      <Button id="calcButton" fx:id="calcButton" alignment="CENTER" disable="true" lineSpacing="2.0" minHeight="-Infinity" mnemonicParsing="false" prefHeight="37.0" prefWidth="300.0" text="Calculate" textFill="RED" GridPane.columnIndex="1" GridPane.columnSpan="2147483647" GridPane.halignment="CENTER" GridPane.rowIndex="11">
+      <TextField id="totalField" fx:id="totalField" editable="false" prefHeight="25.0" prefWidth="316.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+      <Button id="calcButton" fx:id="calcButton" alignment="CENTER" disable="true" lineSpacing="2.0" minHeight="-Infinity" mnemonicParsing="false" onAction="#onCalculateClick" prefHeight="37.0" prefWidth="300.0" text="Calculate" textFill="RED" GridPane.columnIndex="1" GridPane.columnSpan="2147483647" GridPane.halignment="CENTER" GridPane.rowIndex="11">
          <font>
             <Font size="18.0" />
          </font></Button>
