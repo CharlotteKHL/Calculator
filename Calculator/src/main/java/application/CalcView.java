@@ -67,7 +67,7 @@ public class CalcView extends Application implements ViewInterface {
 
   @Override
   public void start(Stage primaryStage) throws IOException {
-    GridPane page = (GridPane) FXMLLoader.load(CalcView.class.getResource("View.fxml"));
+    GridPane page = (GridPane) FXMLLoader.load(CalcView.class.getResource("CalcView.fxml"));
     Scene scene = new Scene(page);
     scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
     primaryStage.setScene(scene);
