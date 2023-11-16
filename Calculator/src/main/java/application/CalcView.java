@@ -7,6 +7,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.control.ToggleButton;
 import javafx.scene.layout.GridPane;
@@ -31,6 +32,10 @@ public class CalcView extends Application implements ViewInterface {
 
   @FXML
   private TextField totalField;
+  
+  @FXML
+  private Label errorLabel;
+
 
   // Methods for registering an observer and for
   // accessing user data in the UI
