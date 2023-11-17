@@ -3,6 +3,7 @@ package application;
 import java.io.IOException;
 import java.util.function.Consumer;
 import javafx.application.Application;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -35,13 +36,17 @@ public class CalcView extends Application implements ViewInterface {
   
   @FXML
   private Label errorLabel;
-
+  
+  @FXML
+  void calculateClick(ActionEvent event) {
+    totalField.setText("23");
+  }
 
   // Methods for registering an observer and for
   // accessing user data in the UI
   // These methods build the Observer/Observable pattern
 
-
+  
   @Override
   public void addCalculateObserver(Runnable f) {
     calcButton.setOnAction(event -> f.run());
