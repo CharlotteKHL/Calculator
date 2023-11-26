@@ -32,5 +32,15 @@ class TestNumStack {
     assertEquals(1, numStack.size());
   }
   
+  //Test4
+  @Test
+  void testMultiplePush() {
+    numStack.push(2.3f);
+    numStack.push(2.4f);
+    assertEquals(2, numStack.size());
+    numStack.push(2.5f);
+    assertEquals(3, numStack.size());
+  }
+  
 
 }

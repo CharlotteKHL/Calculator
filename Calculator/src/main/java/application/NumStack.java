@@ -11,7 +11,7 @@ public class NumStack {
   }
 
   public void push(float value) {
-    size = 1;
+    size = size + 1;
   }
   
 }
