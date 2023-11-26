@@ -5,6 +5,11 @@ package application;
  */
 public class NumStack {
   private int size = 0;
+  private Stack numStack;
+  
+  public NumStack() {
+    numStack = new Stack();
+  }
 
   public float size() {
     return size;
@@ -12,11 +17,14 @@ public class NumStack {
 
   public void push(float value) {
     size = size + 1;
+    Entry newEntry = new Entry(value);
+    numStack.push(newEntry);
   }
   
-  public float pop() {
-    size = 0;
-    return 2.3f;
+  public float pop() throws EmptyStackException, BadTypeException{
+    size = size - 1;
+    Entry returnPop = numStack.pop();
+    return returnPop.getValue();
   }
   
 }
