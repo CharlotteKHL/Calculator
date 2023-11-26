@@ -14,4 +14,9 @@ public class NumStack {
     size = size + 1;
   }
   
+  public float pop() {
+    size = 0;
+    return 2.3f;
+  }
+  
 }

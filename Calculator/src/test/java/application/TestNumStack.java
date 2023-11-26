@@ -37,9 +37,17 @@ class TestNumStack {
   void testMultiplePush() {
     numStack.push(2.3f);
     numStack.push(2.4f);
-    assertEquals(2, numStack.size());
+    assertEquals(2, numStack.size(), "Test size increase");
     numStack.push(2.5f);
-    assertEquals(3, numStack.size());
+    assertEquals(3, numStack.size(), "Test size increase");
+  }
+  
+  //Test5
+  @Test
+  void testPushAndPop() {
+    numStack.push(2.3f);
+    assertEquals(2.3f, numStack.pop(), "Test pop returns the value pushed");
+    assertEquals(0, numStack.size());
   }
   
 
