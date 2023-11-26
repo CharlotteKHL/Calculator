@@ -7,21 +7,41 @@ public class NumStack {
   private int size = 0;
   private Stack numStack;
   
+  /**
+   * Constructor initialises numStack field.
+   */
   public NumStack() {
     numStack = new Stack();
   }
 
+  /**
+   * Use to obtain current size of NumStack.
+   * 
+   * @return current size of stack
+   */
   public float size() {
     return size;
   }
 
+  /**
+   * Use to add a value to the top of the stack.
+   * 
+   * @param value the float value to be added
+   */
   public void push(float value) {
     size = size + 1;
     Entry newEntry = new Entry(value);
     numStack.push(newEntry);
   }
   
-  public float pop() throws EmptyStackException, BadTypeException{
+  /**
+   * Retrieves and removes the value at the top of the stack.
+   * 
+   * @return Float value popped off the top of the stack
+   * @throws EmptyStackException thrown if stack is empty
+   * @throws BadTypeException thrown if getter for entry called does not match float
+   */
+  public float pop() throws EmptyStackException, BadTypeException {
     size = size - 1;
     Entry returnPop = numStack.pop();
     return returnPop.getValue();
