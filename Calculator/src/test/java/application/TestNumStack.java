@@ -74,9 +74,9 @@ class TestNumStack {
   @Test
   void testTopMethod() throws EmptyStackException, BadTypeException {
     numStack.push(2.3f);
-    assertEquals(2.3f, numStack.top());
-    assertEquals(1, numStack.size());
-    assertEquals(2.3f, numStack.pop());
+    assertEquals(2.3f, numStack.top(), "Test returns value on top");
+    assertEquals(1, numStack.size(), "Test size remains the same");
+    assertEquals(2.3f, numStack.pop(), "Test can still pop the value on top");
   }
 
 }
