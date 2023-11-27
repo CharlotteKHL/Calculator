@@ -69,5 +69,14 @@ class TestNumStack {
     EmptyStackException e = assertThrows(EmptyStackException.class, () -> numStack.pop());
     assertEquals("Error: Stack is empty", e.getMessage(),"Test exception thrown when empty stack popped");
   }
+  
+  //Test8
+  @Test
+  void testTopMethod() throws EmptyStackException, BadTypeException {
+    numStack.push(2.3f);
+    assertEquals(2.3f, numStack.top());
+    assertEquals(1, numStack.size());
+    assertEquals(2.3f, numStack.pop());
+  }
 
 }

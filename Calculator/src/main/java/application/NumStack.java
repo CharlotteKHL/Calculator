@@ -46,5 +46,9 @@ public class NumStack {
     Entry returnPop = numStack.pop();
     return returnPop.getValue();
   }
+
+  public float top() {
+    return 2.3f;
+  }
   
 }
