@@ -47,8 +47,9 @@ public class NumStack {
     return returnPop.getValue();
   }
 
-  public float top() {
-    return 2.3f;
+  public float top() throws EmptyStackException, BadTypeException {
+    Entry returnTop = numStack.top();
+    return returnTop.getValue();
   }
   
 }

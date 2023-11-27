@@ -78,5 +78,15 @@ class TestNumStack {
     assertEquals(1, numStack.size(), "Test size remains the same");
     assertEquals(2.3f, numStack.pop(), "Test can still pop the value on top");
   }
+  
+  //Test9
+  @Test
+  void testTopAfterPushAndPop() throws EmptyStackException, BadTypeException {
+    numStack.push(2.3f);
+    numStack.push(2.4f);
+    assertEquals(2.4f, numStack.top(), "Test returns value on top");
+    numStack.pop();
+    assertEquals(2.3f, numStack.top(), "Test returns new value on top after pop");
+  }
 
 }
