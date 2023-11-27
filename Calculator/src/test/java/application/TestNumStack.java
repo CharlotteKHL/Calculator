@@ -88,5 +88,11 @@ class TestNumStack {
     numStack.pop();
     assertEquals(2.3f, numStack.top(), "Test returns new value on top after pop");
   }
-
+  
+  //Test10
+  @Test
+  void testTopWithEmptyStack() {
+    EmptyStackException e = assertThrows(EmptyStackException.class, () -> numStack.top());
+    assertEquals("Error: Stack is empty", e.getMessage(),"Test exception thrown when top called on empty stack");
+  }
 }
