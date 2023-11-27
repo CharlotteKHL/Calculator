@@ -47,6 +47,13 @@ public class NumStack {
     return returnPop.getValue();
   }
 
+  /**
+   * Returns value of item at the top of the stack without removing it.
+   * 
+   * @return Float value of item at the top of the stack
+   * @throws EmptyStackException thrown if called on an empty stack
+   * @throws BadTypeException thrown if getter for entry called does not match float
+   */
   public float top() throws EmptyStackException, BadTypeException {
     Entry returnTop = numStack.top();
     return returnTop.getValue();
