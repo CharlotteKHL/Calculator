@@ -62,5 +62,12 @@ class TestNumStack {
     assertEquals(1, numStack.size(), "Test size decrease to 1");
     assertEquals(2.3f, numStack.pop(), "Test pop returns the 1st value pushed");
   }
+  
+  //Test7
+  @Test
+  void testEmptyPop() {
+    EmptyStackException e = assertThrows(EmptyStackException.class, () -> numStack.pop());
+    assertEquals("Error: Stack is empty", e.getMessage(),"Test exception thrown when empty stack popped");
+  }
 
 }
