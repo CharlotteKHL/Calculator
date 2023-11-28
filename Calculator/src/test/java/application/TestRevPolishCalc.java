@@ -18,20 +18,27 @@ class TestRevPolishCalc {
   //Test2
   @Test
   void testEvaluate() throws BadTypeException, EmptyStackException {
-    assertEquals(5, testCalc.evaluate("0 5 +"), "Test 0 + 5 = 5");
+    assertEquals(5f, testCalc.evaluate("0 5 +"), "Test 0 + 5 = 5");
   }
   
   //Test3
   @Test
   void testEvaluateMany() throws BadTypeException, EmptyStackException {
-    assertEquals(5, testCalc.evaluate("0 5 +"), "Test 0 + 5 = 5");
-    assertEquals(7, testCalc.evaluate("2 5 +"), "Test 2 + 5 = 7");
+    assertEquals(5f, testCalc.evaluate("0 5 +"), "Test 0 + 5 = 5");
+    assertEquals(7f, testCalc.evaluate("2 5 +"), "Test 2 + 5 = 7");
   }
   
   //Test4
   @Test
   void testEvaluateLargeNum() throws BadTypeException, EmptyStackException {
-    assertEquals(30, testCalc.evaluate("25 5 +"), "Test 25 + 5 = 30");
+    assertEquals(30f, testCalc.evaluate("25 5 +"), "Test 25 + 5 = 30");
+  }
+  
+  //Test5
+  @Test
+  void testEvaluateMinus() throws BadTypeException, EmptyStackException {
+    assertEquals(20f, testCalc.evaluate("25 5 -"), "Test 25 - 5 = 20");
+    assertEquals(25f, testCalc.evaluate("30 5 -"), "Test 25 - 5 = 25");
   }
 
 }
