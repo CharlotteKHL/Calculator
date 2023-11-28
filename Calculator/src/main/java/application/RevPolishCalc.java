@@ -42,7 +42,10 @@ public class RevPolishCalc {
           break;
           
         case "*":
-          total = 20f;
+          total = 1f;
+          for (int j = 0; j < numCount; j++) {
+            total = total * stack.pop();
+          }
           break;
           
         default:

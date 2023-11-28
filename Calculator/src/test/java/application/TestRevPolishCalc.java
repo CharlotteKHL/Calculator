@@ -52,5 +52,13 @@ class TestRevPolishCalc {
   void testEvaluateMultiply() throws BadTypeException, EmptyStackException {
     assertEquals(20f, testCalc.evaluate("2 10 *"), "Test 2*10 = 20");
   }
+  
+  //Test8
+  @Test
+  void testMultiplyMany() throws BadTypeException, EmptyStackException {
+    assertEquals(20f, testCalc.evaluate("2 10 *"), "Test 2*10 = 20");
+    assertEquals(25f, testCalc.evaluate("5 5 *"), "Test 5*5 = 25");
+    assertEquals(12f, testCalc.evaluate("3 4 *"), "Test 3*4 = 24");
+  }
 
 }
