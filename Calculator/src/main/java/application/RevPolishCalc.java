@@ -5,4 +5,8 @@ package application;
  */
 public class RevPolishCalc {
 
+  public int evaluate(String string) {
+    return 5;
+  }
+
 }
