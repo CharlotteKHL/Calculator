@@ -20,5 +20,12 @@ class TestRevPolishCalc {
   void testEvaluate() {
     assertEquals(5, testCalc.evaluate("0 5 +"), "Test 0 + 5 = 5");
   }
+  
+  //Test3
+  @Test
+  void testEvaluateMany() {
+    assertEquals(5, testCalc.evaluate("0 5 +"), "Test 0 + 5 = 5");
+    assertEquals(7, testCalc.evaluate("2 5 +"), "Test 2 + 5 = 7");
+  }
 
 }

@@ -5,8 +5,23 @@ package application;
  */
 public class RevPolishCalc {
 
-  public int evaluate(String string) {
-    return 5;
+  public int evaluate(String calculation) {
+    int total = 0;
+    
+    for (int i = 0; i < calculation.length(); i++) {
+      
+      String temp = calculation.substring(i, i + 1);
+      switch(temp) {
+        case "+":
+          break;
+        case " ":
+          break;
+        default:
+          total = total + Integer.valueOf(temp);
+          break;
+      }
+    }
+    return total;
   }
 
 }
