@@ -27,5 +27,11 @@ class TestRevPolishCalc {
     assertEquals(5, testCalc.evaluate("0 5 +"), "Test 0 + 5 = 5");
     assertEquals(7, testCalc.evaluate("2 5 +"), "Test 2 + 5 = 7");
   }
+  
+  //Test4
+  @Test
+  void testEvaluateLargeNum() {
+    assertEquals(30, testCalc.evaluate("25 5 +"), "Test 25 + 5 = 30");
+  }
 
 }

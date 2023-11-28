@@ -13,19 +13,18 @@ public class RevPolishCalc {
    */
   public float evaluate(String calculation) {
     float total = 0;
+    String[] list = calculation.split(" ");
     
-    for (int i = 0; i < calculation.length(); i++) {
+    for (int i = 0; i < list.length; i++) {
       
-      String temp = calculation.substring(i, i + 1);
-      switch(temp) {
+      switch(list[i]) {
         case "+":
           break;
-        case " ":
-          break;
         default:
-          total = total + Integer.valueOf(temp);
+          total = total + Integer.valueOf(list[i]);
           break;
       }
+      
     }
     return total;
   }
