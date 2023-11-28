@@ -5,8 +5,14 @@ package application;
  */
 public class RevPolishCalc {
 
-  public int evaluate(String calculation) {
-    int total = 0;
+  /**
+   * Evaluates a calculation in Reverse Polish form.
+   * 
+   * @param calculation the string to be evaluated
+   * @return float value of result of calculation
+   */
+  public float evaluate(String calculation) {
+    float total = 0;
     
     for (int i = 0; i < calculation.length(); i++) {
       
