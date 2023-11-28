@@ -41,6 +41,10 @@ public class RevPolishCalc {
           numCount = 0;
           break;
           
+        case "*":
+          total = 20f;
+          break;
+          
         default:
           stack.push(Integer.valueOf(list[i]));
           numCount++;

@@ -40,5 +40,17 @@ class TestRevPolishCalc {
     assertEquals(20f, testCalc.evaluate("25 5 -"), "Test 25 - 5 = 20");
     assertEquals(25f, testCalc.evaluate("30 5 -"), "Test 25 - 5 = 25");
   }
+  
+  //Test6
+  @Test
+  void testEvaluateMinusPlus() throws BadTypeException, EmptyStackException {
+    assertEquals(25f, testCalc.evaluate("25 5 - 5 +"), "Test 25 - 5 + 5 = 25");
+  }
+  
+  //Test7
+  @Test
+  void testEvaluateMultiply() throws BadTypeException, EmptyStackException {
+    assertEquals(20f, testCalc.evaluate("2 10 *"), "Test 2*10 = 20");
+  }
 
 }
