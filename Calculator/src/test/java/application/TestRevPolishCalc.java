@@ -67,4 +67,11 @@ class TestRevPolishCalc {
     assertEquals(2f, testCalc.evaluate("8 4 /"), "Test 8/4 = 2");
   }
 
+  //Test10 
+  @Test
+  void testDivideMany() throws BadTypeException, EmptyStackException {
+    assertEquals(4f, testCalc.evaluate("8 2 /"), "Test 8/2 = 4");
+    assertEquals(3f, testCalc.evaluate("12 4 /"), "Test 12/4 = 3");
+  }
+
 }

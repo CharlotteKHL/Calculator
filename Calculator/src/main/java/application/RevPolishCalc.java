@@ -49,7 +49,9 @@ public class RevPolishCalc {
           break;
           
         case "/":
-          total = 2f;
+          float second = stack.pop();
+          float first = stack.pop();
+          total = total + (first / second);
           break;
           
         default:
