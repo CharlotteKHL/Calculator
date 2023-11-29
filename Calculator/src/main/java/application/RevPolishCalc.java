@@ -17,41 +17,34 @@ public class RevPolishCalc {
     int numCount = 0;
     String[] list = calculation.split(" ");
     NumStack stack = new NumStack();
-    float takeAway = 0;
     
     for (int i = 0; i < list.length; i++) {
       
       switch(list[i]) {
         
         case "+":
-          for (int j = 0; j < numCount; j++) {
-            total = total + stack.pop();
-          }
-          numCount = 0;
+          float tempAdd = stack.pop() + stack.pop();
+          stack.push(tempAdd);
+          numCount = numCount - 2;
           break;
           
         case "-":
-          for (int j = 0; j < numCount; j++) {
-            if (j == numCount - 1) {
-              total = total + stack.pop() - takeAway;
-            } else {
-              takeAway = takeAway + stack.pop();
-            }
-          }
-          numCount = 0;
+          
+          float secondMinus = stack.pop();
+          float firstMinus = stack.pop();
+          stack.push(firstMinus-secondMinus);
           break;
           
         case "*":
-          total = 1f;
-          for (int j = 0; j < numCount; j++) {
-            total = total * stack.pop();
-          }
+          float tempMultiply = stack.pop() * stack.pop();
+          stack.push(tempMultiply);
           break;
           
         case "/":
-          float second = stack.pop();
-          float first = stack.pop();
-          total = total + (first / second);
+          
+          float secondDivide = stack.pop();
+          float firstDivide = stack.pop();
+          stack.push(firstDivide / secondDivide);
           break;
           
         default:
@@ -61,7 +54,7 @@ public class RevPolishCalc {
       }
       
     }
-    return total;
+    return stack.pop();
   }
 
 }
