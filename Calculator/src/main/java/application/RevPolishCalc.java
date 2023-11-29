@@ -5,6 +5,8 @@ package application;
  */
 public class RevPolishCalc {
 
+  NumStack stack = new NumStack();
+  
   /**
    * Evaluates a calculation in Reverse Polish form.
    * 
@@ -13,48 +15,57 @@ public class RevPolishCalc {
    */
   public float evaluate(String calculation) throws BadTypeException, EmptyStackException {
     
-    float total = 0;
-    int numCount = 0;
     String[] list = calculation.split(" ");
-    NumStack stack = new NumStack();
     
     for (int i = 0; i < list.length; i++) {
       
       switch(list[i]) {
         
         case "+":
-          float tempAdd = stack.pop() + stack.pop();
-          stack.push(tempAdd);
-          numCount = numCount - 2;
+          add();
           break;
           
         case "-":
-          
-          float secondMinus = stack.pop();
-          float firstMinus = stack.pop();
-          stack.push(firstMinus-secondMinus);
+          minus();
           break;
           
         case "*":
-          float tempMultiply = stack.pop() * stack.pop();
-          stack.push(tempMultiply);
+          multiply();
           break;
           
         case "/":
-          
-          float secondDivide = stack.pop();
-          float firstDivide = stack.pop();
-          stack.push(firstDivide / secondDivide);
+          divide();
           break;
           
         default:
           stack.push(Integer.valueOf(list[i]));
-          numCount++;
           break;
       }
       
     }
     return stack.pop();
+  }
+  
+  public void add() throws BadTypeException, EmptyStackException{
+    float tempAdd = stack.pop() + stack.pop();
+    stack.push(tempAdd);
+  }
+  
+  public void minus() throws BadTypeException, EmptyStackException{
+    float secondMinus = stack.pop();
+    float firstMinus = stack.pop();
+    stack.push(firstMinus - secondMinus);
+  }
+  
+  public void multiply() throws BadTypeException, EmptyStackException{
+    float tempMultiply = stack.pop() * stack.pop();
+    stack.push(tempMultiply);
+  }
+  
+  public void divide() throws BadTypeException, EmptyStackException{
+    float secondDivide = stack.pop();
+    float firstDivide = stack.pop();
+    stack.push(firstDivide / secondDivide);
   }
 
 }
