@@ -46,23 +46,47 @@ public class RevPolishCalc {
     return stack.pop();
   }
   
-  public void add() throws BadTypeException, EmptyStackException{
+  /**
+   * Pushes the result of adding the top two values on the stack.
+   * 
+   * @throws BadTypeException thrown if value getter called for stack does not match type
+   * @throws EmptyStackException thrown if pop called on an empty stack
+   */
+  public void add() throws BadTypeException, EmptyStackException {
     float tempAdd = stack.pop() + stack.pop();
     stack.push(tempAdd);
   }
   
-  public void minus() throws BadTypeException, EmptyStackException{
+  /**
+   * Pushes the result of the top value on the stack taken away from the value before it.
+   * 
+   * @throws BadTypeException thrown if value getter called for stack does not match type
+   * @throws EmptyStackException thrown if pop called on an empty stack
+   */
+  public void minus() throws BadTypeException, EmptyStackException {
     float secondMinus = stack.pop();
     float firstMinus = stack.pop();
     stack.push(firstMinus - secondMinus);
   }
   
-  public void multiply() throws BadTypeException, EmptyStackException{
+  /**
+   * Pushes the result of multiplying the top two values on the stack to the stack.
+   * 
+   * @throws BadTypeException thrown if value getter called for stack does not match type
+   * @throws EmptyStackException thrown if pop called on an empty stack
+   */
+  public void multiply() throws BadTypeException, EmptyStackException {
     float tempMultiply = stack.pop() * stack.pop();
     stack.push(tempMultiply);
   }
   
-  public void divide() throws BadTypeException, EmptyStackException{
+  /**
+   * Pushes the result of dividing the value before the top value on the stack by the top value.
+   * 
+   * @throws BadTypeException thrown if value getter called for stack does not match type
+   * @throws EmptyStackException thrown if pop called on an empty stack
+   */
+  public void divide() throws BadTypeException, EmptyStackException {
     float secondDivide = stack.pop();
     float firstDivide = stack.pop();
     stack.push(firstDivide / secondDivide);
