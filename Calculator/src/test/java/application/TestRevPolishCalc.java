@@ -60,5 +60,11 @@ class TestRevPolishCalc {
     assertEquals(25f, testCalc.evaluate("5 5 *"), "Test 5*5 = 25");
     assertEquals(12f, testCalc.evaluate("3 4 *"), "Test 3*4 = 24");
   }
+  
+  //Test9 
+  @Test
+  void testDivide() throws BadTypeException, EmptyStackException {
+    assertEquals(2f, testCalc.evaluate("8 4 /"), "Test 8/4 = 2");
+  }
 
 }

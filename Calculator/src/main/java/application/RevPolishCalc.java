@@ -48,6 +48,10 @@ public class RevPolishCalc {
           }
           break;
           
+        case "/":
+          total = 2f;
+          break;
+          
         default:
           stack.push(Integer.valueOf(list[i]));
           numCount++;
