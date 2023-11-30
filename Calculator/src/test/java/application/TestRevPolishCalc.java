@@ -85,6 +85,7 @@ class TestRevPolishCalc {
   @Test
   void testEmptyExpression() {
     InvalidExpressionException e = assertThrows(InvalidExpressionException.class, () -> testCalc.evaluate(""));
+    e = assertThrows(InvalidExpressionException.class, () -> testCalc.evaluate(" 3  3 +"));
     assertEquals("Error: Invalid Expression, contains too many empty spaces", e.getMessage()); 
   }
   
@@ -94,6 +95,7 @@ class TestRevPolishCalc {
     InvalidExpressionException e = assertThrows(InvalidExpressionException.class, () -> testCalc.evaluate("Hello"));
     e = assertThrows(InvalidExpressionException.class, () -> testCalc.evaluate("InvalidExpressionHere"));
     e = assertThrows(InvalidExpressionException.class, () -> testCalc.evaluate("Hello&"));
+    e = assertThrows(InvalidExpressionException.class, () -> testCalc.evaluate("3 3 + 4r +"));
 
     assertEquals("Error: Invalid Expression, contains invalid characters", e.getMessage()); 
 
