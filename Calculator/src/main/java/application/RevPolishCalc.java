@@ -5,7 +5,9 @@ package application;
  */
 public class RevPolishCalc {
 
-  NumStack stack = new NumStack();
+  private NumStack stack = new NumStack();
+  private static final String EMPTY_CALCULATION_EXCEPTION = 
+      "Error: Invalid Expression, contains too many empty spaces";
   
   /**
    * Evaluates a calculation in Reverse Polish form.
@@ -13,7 +15,8 @@ public class RevPolishCalc {
    * @param calculation the string to be evaluated
    * @return float value of result of calculation
    */
-  public float evaluate(String calculation) throws BadTypeException, EmptyStackException {
+  public float evaluate(String calculation) 
+      throws BadTypeException, EmptyStackException, InvalidExpressionException {
     
     String[] list = calculation.split(" ");
     
@@ -36,6 +39,9 @@ public class RevPolishCalc {
         case "/":
           divide();
           break;
+          
+        case "":
+          throw new InvalidExpressionException(EMPTY_CALCULATION_EXCEPTION);
           
         default:
           stack.push(Integer.valueOf(list[i]));
