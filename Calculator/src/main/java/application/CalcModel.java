@@ -5,7 +5,7 @@ package application;
  */
 public class CalcModel implements Calculator {
   @Override
-  public float evaluate(String expression, Boolean infix) throws InvalidExpression {
+  public float evaluate(String expression, Boolean infix) throws InvalidExpressionException {
     return 0.0f;
   }
 }
