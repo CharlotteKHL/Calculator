@@ -8,6 +8,8 @@ public class RevPolishCalc {
   private NumStack stack = new NumStack();
   private static final String EMPTY_CALCULATION_EXCEPTION = 
       "Error: Invalid Expression, contains too many empty spaces";
+  private static final String INVALID_SYMBOL_EXCEPTION = 
+      "Error: Invalid Expression, contains invalid characters";
   
   /**
    * Evaluates a calculation in Reverse Polish form.
@@ -44,6 +46,14 @@ public class RevPolishCalc {
           throw new InvalidExpressionException(EMPTY_CALCULATION_EXCEPTION);
           
         default:
+          
+          for (int j = 0; j < list[i].length(); j++) {
+            
+            if (!((list[i].charAt(j) >= '0') && (list[i].charAt(j) <= '9'))) {
+              throw new InvalidExpressionException(INVALID_SYMBOL_EXCEPTION);
+            } 
+          }
+          
           stack.push(Integer.valueOf(list[i]));
           break;
       }
