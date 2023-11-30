@@ -100,5 +100,12 @@ class TestRevPolishCalc {
     assertEquals("Error: Invalid Expression, contains invalid characters", e.getMessage()); 
 
   }
+  
+  //Test14
+  @Test
+  void testNullExpression() {
+    InvalidExpressionException e = assertThrows(InvalidExpressionException.class, () -> testCalc.evaluate(null));
+    assertEquals("Error: Invalid Expression, expression is null", e.getMessage()); 
+  }
 
 }
