@@ -16,6 +16,10 @@ public class RevPolishCalc {
    * 
    * @param calculation the string to be evaluated
    * @return float value of result of calculation
+   * @throws BadTypeException thrown if value getter called for stack does not match type
+   * @throws EmptyStackException thrown if pop or top called on an empty stack
+   * @throws InvalidExpressionException if parameter includes an invalid symbol, 
+   *     character or is empty
    */
   public float evaluate(String calculation) 
       throws BadTypeException, EmptyStackException, InvalidExpressionException {
@@ -66,7 +70,7 @@ public class RevPolishCalc {
    * Pushes the result of adding the top two values on the stack.
    * 
    * @throws BadTypeException thrown if value getter called for stack does not match type
-   * @throws EmptyStackException thrown if pop called on an empty stack
+   * @throws EmptyStackException thrown if pop or top called on an empty stack
    */
   public void add() throws BadTypeException, EmptyStackException {
     float tempAdd = stack.pop() + stack.pop();
@@ -77,7 +81,7 @@ public class RevPolishCalc {
    * Pushes the result of the top value on the stack taken away from the value before it.
    * 
    * @throws BadTypeException thrown if value getter called for stack does not match type
-   * @throws EmptyStackException thrown if pop called on an empty stack
+   * @throws EmptyStackException thrown if pop or top called on an empty stack
    */
   public void minus() throws BadTypeException, EmptyStackException {
     float secondMinus = stack.pop();
@@ -89,7 +93,7 @@ public class RevPolishCalc {
    * Pushes the result of multiplying the top two values on the stack to the stack.
    * 
    * @throws BadTypeException thrown if value getter called for stack does not match type
-   * @throws EmptyStackException thrown if pop called on an empty stack
+   * @throws EmptyStackException thrown if pop or top called on an empty stack
    */
   public void multiply() throws BadTypeException, EmptyStackException {
     float tempMultiply = stack.pop() * stack.pop();
@@ -100,7 +104,7 @@ public class RevPolishCalc {
    * Pushes the result of dividing the value before the top value on the stack by the top value.
    * 
    * @throws BadTypeException thrown if value getter called for stack does not match type
-   * @throws EmptyStackException thrown if pop called on an empty stack
+   * @throws EmptyStackException thrown if pop or top called on an empty stack
    */
   public void divide() throws BadTypeException, EmptyStackException {
     float secondDivide = stack.pop();
