@@ -7,11 +7,12 @@ public class RevPolishCalc {
 
   private NumStack stack = new NumStack();
   private static final String EMPTY_CALCULATION_EXCEPTION = 
-      "Error: Invalid Expression, contains too many empty spaces";
+      "Error: Current input contains too many empty spaces, "
+      + "please leave one space between numbers and symbols";
   private static final String INVALID_SYMBOL_EXCEPTION = 
-      "Error: Invalid Expression, contains invalid characters";
+      "Error: Current input contains invalid characters, please only use *,/,+,-";
   private static final String NULL_EXCEPTION = 
-      "Error: Invalid Expression, expression is null";
+      "Error: Current input is null";
   
   /**
    * Evaluates a calculation in Reverse Polish form.
