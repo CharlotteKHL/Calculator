@@ -1,14 +1,23 @@
 package application;
 
 import static org.junit.jupiter.api.Assertions.*;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 class TestCalcModel {
+  
+  private CalcModel testCalc;
 
   //Test1
-  @Test
+  @BeforeEach
   void testConstructor() {
-    CalcModel testCalc = new CalcModel();
+    testCalc = new CalcModel();
+  }
+  
+  //Test2
+  @Test
+  void testEvaluateRPE() throws InvalidExpressionException {
+    assertEquals(5f, testCalc.evaluate("0 5 +", false), "Test 0 + 5 = 5 in Reverse Polish form");
   }
 
 }
