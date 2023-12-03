@@ -30,5 +30,15 @@ class TestCalcModel {
   
     assertEquals(29f, testCalc.evaluate("3 7 + 2 / 5 * 6 8 - 2 * -", false), "Test (5((3+7)/2)) - 2(6-8) = 29");
   }
+  
+  //Test4
+  @Test
+  void invalidRevPolishExpression() throws InvalidExpressionException, BadTypeException, EmptyStackException {
+    InvalidExpressionException e = assertThrows(InvalidExpressionException.class, () -> testCalc.evaluate("------ +", false));
+    assertEquals(e.getMessage(), "Error: Current input contains invalid characters, please only use *,/,+,-");
+  
+    EmptyStackException E = assertThrows(EmptyStackException.class, () -> testCalc.evaluate("2 + 2 + 4", false));
+
+  }
 
 }
