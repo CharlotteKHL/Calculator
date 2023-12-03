@@ -37,8 +37,8 @@ class TestCalcModel {
     InvalidExpressionException e = assertThrows(InvalidExpressionException.class, () -> testCalc.evaluate("------ +", false));
     assertEquals(e.getMessage(), "Error: Current input contains invalid characters, please only use *,/,+,-");
   
-    EmptyStackException E = assertThrows(EmptyStackException.class, () -> testCalc.evaluate("2 + 2 + 4", false));
-
+    EmptyStackException E = assertThrows(EmptyStackException.class, () -> testCalc.evaluate("2 + 2 + 4", false), "Test a standard form expression throws an error");
+    assertEquals(E.getMessage(), "Error: Not enough numbers to calculate with. Please check you are in the right calculation mode");
   }
 
 }

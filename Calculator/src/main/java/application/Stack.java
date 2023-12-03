@@ -12,7 +12,8 @@ public class Stack {
 
   private int size = 0;
   private List<Entry> entries = new ArrayList<Entry>();
-  private static final String EMPTY_STACK_MSG = "Error: Stack is empty";
+  private static final String EMPTY_STACK_MSG = "Error: Not enough numbers to calculate with. "
+      + "Please check you are in the right calculation mode";
 
   /**
    * Use to retrieve the current size of the stack.

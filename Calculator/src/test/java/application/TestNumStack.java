@@ -67,7 +67,8 @@ class TestNumStack {
   @Test
   void testEmptyPop() {
     EmptyStackException e = assertThrows(EmptyStackException.class, () -> numStack.pop());
-    assertEquals("Error: Stack is empty", e.getMessage(),"Test exception thrown when empty stack popped");
+    assertEquals("Error: Not enough numbers to calculate with. "
+        + "Please check you are in the right calculation mode", e.getMessage(),"Test exception thrown when empty stack popped");
   }
   
   //Test8
@@ -93,6 +94,7 @@ class TestNumStack {
   @Test
   void testTopWithEmptyStack() {
     EmptyStackException e = assertThrows(EmptyStackException.class, () -> numStack.top());
-    assertEquals("Error: Stack is empty", e.getMessage(),"Test exception thrown when top called on empty stack");
+    assertEquals("Error: Not enough numbers to calculate with. "
+        + "Please check you are in the right calculation mode", e.getMessage(),"Test exception thrown when top called on empty stack");
   }
 }

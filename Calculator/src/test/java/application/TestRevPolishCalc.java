@@ -108,5 +108,12 @@ class TestRevPolishCalc {
     InvalidExpressionException e = assertThrows(InvalidExpressionException.class, () -> testCalc.evaluate(null));
     assertEquals( "Error: Current input is null", e.getMessage()); 
   }
+  
+  //Test15
+  @Test
+  void testStandardFormExpressionInvalid() {
+    EmptyStackException e = assertThrows(EmptyStackException.class, () -> testCalc.evaluate("2 + 2"), "Test a standard form expression throws an error");
+    assertEquals(e.getMessage(), "Error: Not enough numbers to calculate with. Please check you are in the right calculation mode");
+  }
 
 }
