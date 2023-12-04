@@ -45,5 +45,11 @@ class TestCalcModel {
     assertEquals(E.getMessage(), "Error: Not enough numbers to calculate with. Please check you are in the right calculation mode");
     
   }
+  
+  //Test16
+  @Test
+  void testDivideByZero() throws InvalidExpressionException, BadTypeException, EmptyStackException {
+     InvalidExpressionException e = assertThrows(InvalidExpressionException.class, () -> testCalc.evaluate("2 0 /", false));
+  }
 
 }
