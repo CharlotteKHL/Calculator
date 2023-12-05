@@ -17,10 +17,18 @@ class TestCalcController {
     testModel = new CalcModel();
     testCalc = new CalcController(testModel, testView);
   }
+  
   //Test1
   @Test
   void testConstructor() {
     assertNotNull(testCalc);
+  }
+  
+  //Test2
+  @Test
+  void testParameterSet() {
+    assertNotNull(testCalc.getModel(), "Test CalcModel defined");
+    assertNotNull(testCalc.getView(), "Test CalcView defined");
   }
 
 }

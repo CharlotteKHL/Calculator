@@ -7,10 +7,24 @@ package application;
 public class CalcController {
   private CalcModel myModel;
   private ViewInterface myView;
+  private boolean isInfix = false;
 
   private void handleCalculation() {}
 
   private void handleTypeChange() {}
 
-  CalcController(CalcModel model, ViewInterface view) {}
+  CalcController(CalcModel model, ViewInterface view) {
+    myModel = model;
+    myView = view;
+  }
+  
+  public CalcModel getModel() {
+    return myModel;
+  }
+  
+  public ViewInterface getView() {
+    return myView;
+  }
+
+  
 }
