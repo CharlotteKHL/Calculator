@@ -6,14 +6,14 @@ import org.junit.jupiter.api.Test;
 
 class TestCalcController {
 
-  private CalcView testView;
+  private MockView testView;
   private CalcModel testModel;
   private CalcController testCalc;
   
   //Initialise Variables
   @BeforeEach
   void initialise() {
-    testView = new CalcView();
+    testView = new MockView();
     testModel = new CalcModel();
     testCalc = new CalcController(testModel, testView);
   }
