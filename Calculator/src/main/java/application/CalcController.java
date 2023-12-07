@@ -7,7 +7,7 @@ package application;
 public class CalcController {
   private CalcModel myModel;
   private ViewInterface myView;
-  private boolean isInfix = false;
+  private static boolean isInfix = false;
 
   private void handleCalculation() {
     String expression = myView.getExpression();
@@ -26,7 +26,13 @@ public class CalcController {
 
   }
 
-  private void handleTypeChange(OpType typeOfCalc) {}
+  private void handleTypeChange(OpType typeOfCalc) {
+    if (typeOfCalc == OpType.REV_POLISH) {
+      isInfix = false;
+    } else if (typeOfCalc == OpType.STANDARD) {
+      isInfix = true;
+    }
+  }
 
   CalcController(CalcModel model, ViewInterface view) {
     myModel = model;
@@ -43,6 +49,10 @@ public class CalcController {
   
   public ViewInterface getView() {
     return myView;
+  }
+
+  public static boolean getOpType() {
+    return isInfix;
   }
 
   

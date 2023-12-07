@@ -96,6 +96,18 @@ class TestCalcController {
     assertEquals(testView.errorMessage, "Error: Current input divides by 0");
     
   }
+  
+  //Test10
+  @Test
+  void testCalculationTypeChange() {
+    testView.setTypeToBeNotified.accept(OpType.REV_POLISH);
+    assertEquals(CalcController.getOpType(), false);
+
+    testView.setTypeToBeNotified.accept(OpType.STANDARD);
+    assertEquals(CalcController.getOpType(), true);
+
+  }
+
 
 
 
