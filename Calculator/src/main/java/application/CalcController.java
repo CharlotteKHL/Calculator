@@ -22,14 +22,14 @@ public class CalcController {
     try {
       float answer = myModel.evaluate(expression, isInfix);
       myView.setAnswer("" + answer);
-    } catch (InvalidExpressionException e) {
-      myView.setErrorMessage(e.getMessage());
+    } catch (InvalidExpressionException exception) {
+      myView.setErrorMessage(exception.getMessage());
     } 
-    catch (EmptyStackException e) {
-      myView.setErrorMessage(e.getMessage());
+    catch (EmptyStackException exception) {
+      myView.setErrorMessage(exception.getMessage());
     } 
-    catch (BadTypeException e) {
-      e.printStackTrace();
+    catch (BadTypeException exception) {
+      exception.printStackTrace();
     } 
 
   }

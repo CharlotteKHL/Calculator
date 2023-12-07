@@ -35,9 +35,9 @@ public class RevPolishCalc {
     
     String[] list = calculation.split(" ");
     
-    for (int i = 0; i < list.length; i++) {
+    for (int index = 0; index < list.length; index++) {
       
-      switch(list[i]) {
+      switch(list[index]) {
         
         case "+":
           add();
@@ -60,14 +60,14 @@ public class RevPolishCalc {
           
         default:
           
-          for (int j = 0; j < list[i].length(); j++) {
+          for (int j = 0; j < list[index].length(); j++) {
             
-            if (!((list[i].charAt(j) >= '0') && (list[i].charAt(j) <= '9'))) {
+            if (!((list[index].charAt(j) >= '0') && (list[index].charAt(j) <= '9'))) {
               throw new InvalidExpressionException(INVALID_SYMBOL_EXCEPTION);
             }
           }
           
-          stack.push(Integer.valueOf(list[i]));
+          stack.push(Integer.valueOf(list[index]));
           break;
       }
       
