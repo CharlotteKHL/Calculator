@@ -10,6 +10,8 @@ public class CalcController {
   private static boolean isInfix = false;
 
   private void handleCalculation() {
+    myView.setErrorMessage("");
+    
     String expression = myView.getExpression();
     try {
       float answer = myModel.evaluate(expression, isInfix);
