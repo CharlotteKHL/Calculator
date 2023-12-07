@@ -40,6 +40,8 @@ public interface ViewInterface {
    */
 
   void setAnswer(String a);
+  
+  void setErrorMessage(String m);
 
   /**
    * Activate the user interface - all systems are go. All buttons start disabled - the controller

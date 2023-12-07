@@ -5,7 +5,9 @@ package application;
  */
 public class CalcModel implements Calculator {
   @Override
-  public float evaluate(String expression, Boolean infix) throws InvalidExpressionException {
-    return 0.0f;
+  public float evaluate(String expression, Boolean infix) 
+      throws InvalidExpressionException, BadTypeException, EmptyStackException {
+    RevPolishCalc calculator = new RevPolishCalc();
+    return calculator.evaluate(expression);
   }
 }

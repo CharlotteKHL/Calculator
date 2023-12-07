@@ -39,13 +39,15 @@ public class CalcView extends Application implements ViewInterface {
   
   @FXML
   void calculateClick(ActionEvent event) {
-    totalField.setText("23");
   }
 
   // Methods for registering an observer and for
   // accessing user data in the UI
   // These methods build the Observer/Observable pattern
-
+  
+  public void setErrorMessage(String message) {
+    errorLabel.setText(message);
+  }
   
   @Override
   public void addCalculateObserver(Runnable f) {

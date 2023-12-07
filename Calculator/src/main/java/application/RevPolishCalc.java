@@ -11,6 +11,8 @@ public class RevPolishCalc {
       + "please leave one space between numbers and symbols";
   private static final String INVALID_SYMBOL_EXCEPTION = 
       "Error: Current input contains invalid characters, please only use *,/,+,-";
+  private static final String DIVIDE_BY_ZERO_EXCEPTION = 
+      "Error: Current input divides by 0";
   private static final String NULL_EXCEPTION = 
       "Error: Current input is null";
   
@@ -113,9 +115,12 @@ public class RevPolishCalc {
    * @throws BadTypeException thrown if value getter called for stack does not match type
    * @throws EmptyStackException thrown if pop or top called on an empty stack
    */
-  public void divide() throws BadTypeException, EmptyStackException {
+  public void divide() throws InvalidExpressionException, BadTypeException, EmptyStackException {
     float secondDivide = stack.pop();
     float firstDivide = stack.pop();
+    if (secondDivide == 0) {
+      throw new InvalidExpressionException(DIVIDE_BY_ZERO_EXCEPTION);
+    }
     stack.push(firstDivide / secondDivide);
   }
 
