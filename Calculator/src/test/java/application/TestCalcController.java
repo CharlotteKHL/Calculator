@@ -69,6 +69,15 @@ class TestCalcController {
     assertEquals(testView.errorMessage, "Error: Current input contains invalid characters, please only use *,/,+,-");
 
   }
+  
+  //Test7
+  @Test
+  void testNullExpression() {
+    testView.question = null;
+    testView.evaluateMethodToBeNotified.run();
+    assertEquals(testView.errorMessage, "Error: Current input is null");
+  
+  }
 
 
 
