@@ -28,6 +28,7 @@
       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
       <RowConstraints maxHeight="30.0" minHeight="0.0" prefHeight="30.0" vgrow="SOMETIMES" />
       <RowConstraints maxHeight="30.0" minHeight="0.0" prefHeight="0.0" vgrow="SOMETIMES" />
       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
@@ -36,19 +37,19 @@
       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
   </rowConstraints>
    <children>
-      <TextField id="inputField" fx:id="inputField" prefHeight="26.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-      <TextField id="totalField" fx:id="totalField" editable="false" prefHeight="25.0" prefWidth="316.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-      <Button id="calcButton" fx:id="calcButton" alignment="CENTER" disable="true" lineSpacing="2.0" minHeight="-Infinity" mnemonicParsing="false" onAction="#calculateClick" prefHeight="37.0" prefWidth="300.0" text="Calculate" textFill="#00a80e" GridPane.columnIndex="1" GridPane.columnSpan="2147483647" GridPane.halignment="CENTER" GridPane.rowIndex="11">
+      <TextField id="inputField" fx:id="inputField" prefHeight="26.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+      <TextField id="totalField" fx:id="totalField" editable="false" prefHeight="25.0" prefWidth="316.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+      <Button id="calcButton" fx:id="calcButton" alignment="CENTER" disable="true" lineSpacing="2.0" minHeight="-Infinity" mnemonicParsing="false" onAction="#calculateClick" prefHeight="37.0" prefWidth="300.0" text="Calculate" textFill="#00a80e" GridPane.columnIndex="1" GridPane.columnSpan="2147483647" GridPane.halignment="CENTER" GridPane.rowIndex="12">
          <font>
             <Font size="18.0" />
          </font>
          <GridPane.margin>
             <Insets left="105.0" />
          </GridPane.margin></Button>
-      <Label text="Input: " GridPane.halignment="RIGHT" GridPane.rowIndex="2" />
-      <Label text="Answer: " GridPane.halignment="RIGHT" GridPane.rowIndex="4" />
-      <FlowPane alignment="CENTER" GridPane.columnSpan="2" GridPane.rowIndex="5" />
-      <ButtonBar prefHeight="25.0" prefWidth="339.0" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.rowIndex="8">
+      <Label text="Input: " GridPane.halignment="RIGHT" GridPane.rowIndex="3" />
+      <Label text="Answer: " GridPane.halignment="RIGHT" GridPane.rowIndex="5" />
+      <FlowPane alignment="CENTER" GridPane.columnSpan="2" GridPane.rowIndex="6" />
+      <ButtonBar prefHeight="25.0" prefWidth="339.0" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.rowIndex="9">
          <buttons>
             <ToggleButton fx:id="revPolishCalculatorButton" contentDisplay="CENTER" minWidth="69.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="155.0" selected="true" text="Reverse Polish">
                <toggleGroup>
@@ -58,9 +59,10 @@
             <ToggleButton fx:id="infixCalculatorButton" disable="true" mnemonicParsing="false" prefHeight="25.0" prefWidth="137.0" text="Standard" toggleGroup="$type" />
          </buttons>
       </ButtonBar>
-      <Label fx:id="errorLabel" textFill="RED" GridPane.columnSpan="2147483647" GridPane.halignment="LEFT" GridPane.rowIndex="6">
+      <Label fx:id="errorLabel" textFill="RED" GridPane.columnSpan="2147483647" GridPane.halignment="LEFT" GridPane.rowIndex="7">
          <padding>
             <Insets left="30.0" />
          </padding></Label>
+      <Label prefHeight="17.0" prefWidth="463.0" text="   This is Version 2.0 of the calculator, both buttons will calculate in Reverse Polish form" GridPane.columnIndex="1" GridPane.columnSpan="2147483647" GridPane.halignment="LEFT" GridPane.rowIndex="1" />
    </children>
 </GridPane>
