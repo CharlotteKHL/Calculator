@@ -11,11 +11,15 @@ public class CalcController {
 
   private void handleCalculation() {}
 
-  private void handleTypeChange() {}
+  private void handleTypeChange(OpType typeOfCalc) {}
 
   CalcController(CalcModel model, ViewInterface view) {
     myModel = model;
     myView = view;
+    
+    myView.addCalculateObserver(this::handleCalculation);
+    myView.addTypeObserver(this::handleTypeChange);
+
   }
   
   public CalcModel getModel() {

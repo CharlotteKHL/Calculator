@@ -30,5 +30,13 @@ class TestCalcController {
     assertNotNull(testCalc.getModel(), "Test CalcModel defined");
     assertNotNull(testCalc.getView(), "Test CalcView defined");
   }
+  
+  //Test3
+  @Test
+  void testObserverSet() {
+    assertNotNull(testView.evaluateMethodToBeNotified, "Test evaluate method set");
+    assertNotNull(testView.setTypeToBeNotified, "Test type change method set");
+  }
+
 
 }

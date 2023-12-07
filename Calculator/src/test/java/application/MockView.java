@@ -7,12 +7,16 @@ import java.util.function.Function;
  * Used by the test suite as a View - it is convenient to have a mock view with public fields.
  */
 public class MockView implements ViewInterface {
-  public Function<String, Integer> evaluateMethodToBeNotified = null;
-  public Consumer<Boolean> setAdderToBeNotified = null;
+  public Runnable evaluateMethodToBeNotified = null;
+  public Consumer<OpType> setTypeToBeNotified = null;
 
-  public void addCalculateObserver(Runnable f) {}
+  public void addCalculateObserver(Runnable f) {
+    evaluateMethodToBeNotified = f;
+  }
 
-  public void addTypeObserver(Consumer<OpType> c) {}
+  public void addTypeObserver(Consumer<OpType> c) {
+    setTypeToBeNotified = c;
+  }
 
   public void startView() {
 
