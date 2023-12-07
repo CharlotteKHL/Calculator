@@ -10,7 +10,20 @@ public class CalcController {
   private boolean isInfix = false;
 
   private void handleCalculation() {
-    myView.setAnswer("4.0");
+    String expression = myView.getExpression();
+    try {
+      float answer = myModel.evaluate(expression, isInfix);
+      myView.setAnswer("" + answer);
+    } catch (InvalidExpressionException e) {
+      e.printStackTrace();
+    } 
+    catch (EmptyStackException e) {
+      e.printStackTrace();
+    } 
+    catch (BadTypeException e) {
+      e.printStackTrace();
+    } 
+
   }
 
   private void handleTypeChange(OpType typeOfCalc) {}

@@ -10,6 +10,7 @@ public class MockView implements ViewInterface {
   public Runnable evaluateMethodToBeNotified = null;
   public Consumer<OpType> setTypeToBeNotified = null;
   public String answer;
+  public String question = "2 2 +";
 
   public void addCalculateObserver(Runnable f) {
     evaluateMethodToBeNotified = f;
@@ -25,7 +26,7 @@ public class MockView implements ViewInterface {
   
   @Override
   public String getExpression() {
-    return "2 2 +";
+    return question;
   }
 
   @Override

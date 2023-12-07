@@ -44,6 +44,18 @@ class TestCalcController {
     testView.evaluateMethodToBeNotified.run();
     assertEquals("4.0", testView.answer, "Test 2 + 2 = 4");
   }
+  
+  //Test5
+  @Test
+  void testManyCalculate() {
+    testView.question = "2 3 +";
+    testView.evaluateMethodToBeNotified.run();
+    assertEquals("5.0", testView.answer, "Test 2 + 3 = 5");
+    
+    testView.question = "8 4 /";
+    testView.evaluateMethodToBeNotified.run();
+    assertEquals("2.0", testView.answer, "Test 8/4 = 2");
+  }
 
 
 }
