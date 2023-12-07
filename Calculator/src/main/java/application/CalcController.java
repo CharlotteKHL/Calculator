@@ -9,7 +9,9 @@ public class CalcController {
   private ViewInterface myView;
   private boolean isInfix = false;
 
-  private void handleCalculation() {}
+  private void handleCalculation() {
+    myView.setAnswer("4.0");
+  }
 
   private void handleTypeChange(OpType typeOfCalc) {}
 

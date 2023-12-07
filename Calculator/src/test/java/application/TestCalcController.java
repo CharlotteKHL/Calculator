@@ -38,5 +38,12 @@ class TestCalcController {
     assertNotNull(testView.setTypeToBeNotified, "Test type change method set");
   }
 
+  //Test4
+  @Test
+  void testSimpleCalculation() {
+    testView.evaluateMethodToBeNotified.run();
+    assertEquals("4.0", testView.answer, "Test 2 + 2 = 4");
+  }
+
 
 }

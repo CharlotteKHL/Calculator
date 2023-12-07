@@ -9,6 +9,7 @@ import java.util.function.Function;
 public class MockView implements ViewInterface {
   public Runnable evaluateMethodToBeNotified = null;
   public Consumer<OpType> setTypeToBeNotified = null;
+  public String answer;
 
   public void addCalculateObserver(Runnable f) {
     evaluateMethodToBeNotified = f;
@@ -24,13 +25,12 @@ public class MockView implements ViewInterface {
   
   @Override
   public String getExpression() {
-    // TODO Auto-generated method stub
-    return null;
+    return "2 2 +";
   }
 
   @Override
   public void setAnswer(String a) {
-    // TODO Auto-generated method stub
+    answer = a;
     
   }
 
