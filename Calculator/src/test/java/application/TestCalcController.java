@@ -87,6 +87,16 @@ class TestCalcController {
     assertEquals(testView.errorMessage, "Error: Not enough numbers to calculate with. Please check you are in the right calculation mode");
     
   }
+  
+  //Test9
+  @Test
+  void testDivideByZero() {
+    testView.question = "2 0 /";
+    testView.evaluateMethodToBeNotified.run();
+    assertEquals(testView.errorMessage, "Error: Current input divides by 0");
+    
+  }
+
 
 
 }
