@@ -15,7 +15,7 @@ public class CalcController {
       float answer = myModel.evaluate(expression, isInfix);
       myView.setAnswer("" + answer);
     } catch (InvalidExpressionException e) {
-      e.printStackTrace();
+      myView.setErrorMessage(e.getMessage());
     } 
     catch (EmptyStackException e) {
       e.printStackTrace();

@@ -56,6 +56,20 @@ class TestCalcController {
     testView.evaluateMethodToBeNotified.run();
     assertEquals("2.0", testView.answer, "Test 8/4 = 2");
   }
+  
+  //Test6
+  @Test
+  void testInvalidExpression() {
+    testView.question = "";
+    testView.evaluateMethodToBeNotified.run();
+    assertEquals(testView.errorMessage, "Error: Current input contains too many empty spaces, please leave one space between numbers and symbols");
+
+    testView.question = "Hello +";
+    testView.evaluateMethodToBeNotified.run();
+    assertEquals(testView.errorMessage, "Error: Current input contains invalid characters, please only use *,/,+,-");
+
+  }
+
 
 
 }

@@ -11,6 +11,7 @@ public class MockView implements ViewInterface {
   public Consumer<OpType> setTypeToBeNotified = null;
   public String answer;
   public String question = "2 2 +";
+  public Object errorMessage;
 
   public void addCalculateObserver(Runnable f) {
     evaluateMethodToBeNotified = f;
@@ -37,7 +38,6 @@ public class MockView implements ViewInterface {
 
   @Override
   public void setErrorMessage(String m) {
-    // TODO Auto-generated method stub
-    
+    errorMessage = m;
   }
 }
