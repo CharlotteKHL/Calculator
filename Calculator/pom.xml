@@ -111,6 +111,11 @@
 									</limits>
 								</rule>
 							</rules>
+							  <excludes>
+    							<exclude>**/*View*</exclude>
+    						 	<exclude>**/*Driver*</exclude>
+   								<exclude>**/test/**/*</exclude>
+  							  </excludes>
 						</configuration>
 					</execution>
 				</executions>
