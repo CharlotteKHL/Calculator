@@ -18,7 +18,7 @@ public class CalcController {
       myView.setErrorMessage(e.getMessage());
     } 
     catch (EmptyStackException e) {
-      e.printStackTrace();
+      myView.setErrorMessage(e.getMessage());
     } 
     catch (BadTypeException e) {
       e.printStackTrace();

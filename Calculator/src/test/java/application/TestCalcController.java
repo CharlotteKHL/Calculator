@@ -78,7 +78,15 @@ class TestCalcController {
     assertEquals(testView.errorMessage, "Error: Current input is null");
   
   }
-
+  
+  //Test8
+  @Test
+  void testEmptyStack() {
+    testView.question = "2 + 2";
+    testView.evaluateMethodToBeNotified.run();
+    assertEquals(testView.errorMessage, "Error: Not enough numbers to calculate with. Please check you are in the right calculation mode");
+    
+  }
 
 
 }
