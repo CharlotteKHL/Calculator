@@ -1,6 +1,12 @@
-# CS2800
+This Calculator currently has 2 release versions, information on this can be found in RELEASES NOTES.txt.
 
-This repository has been created to store your CS2800 work.
+Configuration for the most recent release of this Calculator:
 
-You may edit it as you like, but please do not remove the default topics or the project members list. These need to stay as currently defined in order for your lecturer to be able to find and mark your work.
+Tested and can be used on the following Operating Systems:
+- Linux
+- Windows
+
+Tested and can be used with the following versions of Maven and Java:
+- Version 1.8 Maven
+- JavaSE-11
 
