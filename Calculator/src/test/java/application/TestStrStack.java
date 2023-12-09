@@ -108,9 +108,14 @@ class TestStrStack {
     assertEquals("World", testStack.pop(), "Test that top of stack is not removed");
     assertEquals("Hello", testStack.pop(), "Test that top of stack is not removed");
 
-
-
-    
+  }
+  
+  //Test10
+  @Test
+  void testEmptyTop() {
+    EmptyStackException e = assertThrows(EmptyStackException.class, () -> testStack.top());
+    assertEquals("Error: Not enough numbers to calculate with. "
+        + "Please check you are in the right calculation mode", e.getMessage(),"Test exception thrown when empty stack popped");
   }
 
 }
