@@ -117,4 +117,12 @@ class TestOpStack {
 
   }
   
+  //Test10
+  @Test
+  void testEmptyTop() {
+    EmptyStackException e = assertThrows(EmptyStackException.class, () -> testStack.top());
+    assertEquals("Error: Not enough numbers to calculate with. "
+        + "Please check you are in the right calculation mode", e.getMessage(),"Test exception thrown when top() called on an empty stack");
+  }
+  
 }
