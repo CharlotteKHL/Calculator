@@ -36,4 +36,8 @@ public class StrStack {
     return returnString.getString();
   }
 
+  public String top() {
+    return "Hello";
+  }
+
 }

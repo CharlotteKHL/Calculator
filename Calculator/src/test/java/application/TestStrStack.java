@@ -82,5 +82,13 @@ class TestStrStack {
     assertEquals("Error: Not enough numbers to calculate with. "
         + "Please check you are in the right calculation mode", e.getMessage(),"Test exception thrown when empty stack popped");
   }
+  
+  //Test8
+  @Test
+  void testTop() {
+    testStack.push("Hello");
+    assertEquals("Hello", testStack.top(), "Test top of stack is the string most recently pushed");
+    assertEquals(1, testStack.size(), "Test that size of stack remains unchanged");
+  }
 
 }
