@@ -51,12 +51,33 @@ class TestOpStack {
   
   //Test5
   @Test
-  void testPushAndPop() {
+  void testPushAndPop() throws EmptyStackException, BadTypeException {
     testStack.push(plus);
     Symbol pop = testStack.pop();
     assertEquals(0, testStack.size(), "Test stack size is 0 after a push and pop");
     assertEquals(Symbol.PLUS, pop, "Test value popped off top of stack is the value pushed on");
     
+  }
+  
+  //Test6
+  @Test
+  void testPushAndPopMany() throws EmptyStackException, BadTypeException {
+    testStack.push(Symbol.DIVIDE);
+    testStack.push(Symbol.PLUS);
+    testStack.push(Symbol.TIME);
+    
+    Symbol pop = testStack.pop();
+    assertEquals(Symbol.TIME, pop, "Test pop value is equal to value pushed last");
+    assertEquals(2, testStack.size(), "Test stack size is 2 after 3 push and pop");
+    
+    pop = testStack.pop();
+    assertEquals(Symbol.PLUS, pop, "Test pop value is equal to value pushed second");
+    assertEquals(1, testStack.size(), "Test stack size is 1 after 3 push 2 pop");
+
+    pop = testStack.pop();
+    assertEquals(Symbol.DIVIDE, pop, "Test pop value is equal to value pushed first");
+    assertEquals(0, testStack.size(), "Test stack size is 0 after 3 push 3 pop");
+
   }
   
 }
