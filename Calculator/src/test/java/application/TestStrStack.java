@@ -74,5 +74,13 @@ class TestStrStack {
 
 
   }
+  
+  //Test7
+  @Test
+  void testEmptyPop() throws EmptyStackException, BadTypeException {
+    EmptyStackException e = assertThrows(EmptyStackException.class, () -> testStack.pop());
+    assertEquals("Error: Not enough numbers to calculate with. "
+        + "Please check you are in the right calculation mode", e.getMessage(),"Test exception thrown when empty stack popped");
+  }
 
 }
