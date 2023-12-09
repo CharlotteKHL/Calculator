@@ -19,5 +19,11 @@ class TestStandardCalc {
     testCalc = new StandardCalc();
     assertNotNull(testCalc);
   }
+  
+  //Test2
+  @Test
+  void testEvaluateSimple() {
+    assertEquals(4f, testCalc.evaluate("2 + 2"), "Test that 2 + 2 = 4");
+  }
 
 }
