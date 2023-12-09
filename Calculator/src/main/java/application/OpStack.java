@@ -5,4 +5,13 @@ package application;
  */
 public class OpStack {
 
+  /**
+   * Retrieves the current size of the OpStack.
+   * 
+   * @return integer value of the current size of the stack
+   */
+  public int size() {
+    return 0;
+  }
+
 }
