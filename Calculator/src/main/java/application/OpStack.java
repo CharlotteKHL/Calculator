@@ -20,4 +20,9 @@ public class OpStack {
     size = size + 1;
   }
 
+  public Symbol pop() {
+    size = 0;
+    return Symbol.PLUS;
+  }
+
 }
