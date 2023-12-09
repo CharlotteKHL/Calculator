@@ -5,7 +5,6 @@ package application;
  */
 public class OpStack {
 
-  private int size = 0;
   private Stack opStack = new Stack();
 
   /**
@@ -14,7 +13,7 @@ public class OpStack {
    * @return integer value of the current size of the stack
    */
   public int size() {
-    return size;
+    return opStack.size();
   }
 
   /**
@@ -25,7 +24,6 @@ public class OpStack {
   public void push(Symbol operator) {
     Entry newEntry = new Entry(operator);
     opStack.push(newEntry);
-    size = size + 1;
   }
 
   /**
@@ -36,7 +34,6 @@ public class OpStack {
    * @throws BadTypeException if getter for entry value does not match the type of the value
    */
   public Symbol pop() throws EmptyStackException, BadTypeException {
-    size = size - 1;
     Entry returnEntry = opStack.pop();
     return returnEntry.getSymbol();
   }
