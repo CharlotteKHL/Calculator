@@ -5,4 +5,8 @@ package application;
  */
 public class StrStack {
 
+  public Object size() {
+    return 0;
+  }
+
 }
