@@ -4,7 +4,6 @@ package application;
  * NumStack class contains a stack specialised for floats.
  */
 public class NumStack {
-  private int size = 0;
   private Stack numStack;
   
   /**
@@ -20,7 +19,7 @@ public class NumStack {
    * @return current size of stack
    */
   public float size() {
-    return size;
+    return numStack.size();
   }
 
   /**
@@ -29,7 +28,6 @@ public class NumStack {
    * @param value the float value to be added
    */
   public void push(float value) {
-    size = size + 1;
     Entry newEntry = new Entry(value);
     numStack.push(newEntry);
   }
@@ -42,7 +40,6 @@ public class NumStack {
    * @throws BadTypeException thrown if getter for entry called does not match float
    */
   public float pop() throws EmptyStackException, BadTypeException {
-    size = size - 1;
     Entry returnPop = numStack.pop();
     return returnPop.getValue();
   }
