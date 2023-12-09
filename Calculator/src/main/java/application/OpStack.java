@@ -1,10 +1,10 @@
 package application;
 
 /**
- *  Specialised stack class to store operators in a mathematical expression.
+ * Specialised stack class to store operators in a mathematical expression.
  */
 public class OpStack {
-	
+
   int size = 0;
 
   /**
@@ -17,7 +17,7 @@ public class OpStack {
   }
 
   public void push(Symbol plus) {
-    size = 1;
+    size = size + 1;
   }
 
 }

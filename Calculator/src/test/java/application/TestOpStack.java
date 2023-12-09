@@ -6,32 +6,46 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 class TestOpStack {
-	
-	OpStack testStack;
-	
-	@BeforeEach
-	void initialise() {
-		testStack = new OpStack();
-	}
 
-	//Test1
-	@Test
-	void testConstructor() {
-		assertNotNull(testStack);
-	}
+  OpStack testStack;
 
-	//Test2
-	@Test
-	void testSize() {
-		assertEquals(0, testStack.size(), "Test an empty stack has size 0");
-	}
-	
-	//Test3
-	@Test
-	void testPush() {
-		Symbol plus = Symbol.PLUS;
-		testStack.push(plus);
-		assertEquals(1, testStack.size(), "Test stack size is 1 after a push");
-	}
+  @BeforeEach
+  void initialise() {
+    testStack = new OpStack();
+  }
 
+  // Test1
+  @Test
+  void testConstructor() {
+    assertNotNull(testStack);
+  }
+
+  // Test2
+  @Test
+  void testSize() {
+    assertEquals(0, testStack.size(), "Test an empty stack has size 0");
+  }
+
+  // Test3
+  @Test
+  void testPush() {
+    Symbol plus = Symbol.PLUS;
+    testStack.push(plus);
+    assertEquals(1, testStack.size(), "Test stack size is 1 after a push");
+  }
+
+  // Test4
+  @Test
+	void testPushMany() {
+    Symbol plus = Symbol.PLUS;
+    
+    testStack.push(plus);
+    assertEquals(1, testStack.size(), "Test stack size is 1 after a push");
+    testStack.push(plus);
+    assertEquals(2, testStack.size(), "Test stack size is 2 after a second push");
+    testStack.push(plus);
+    assertEquals(3, testStack.size(), "Test stack size is 3 after a third push");
+
+
+  }
 }
