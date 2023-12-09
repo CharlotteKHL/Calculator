@@ -12,7 +12,7 @@ public class StrStack {
   }
 
   public void push(String string) {
-    size = 1;
+    size = size + 1;
   }
 
 }

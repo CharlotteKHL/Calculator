@@ -33,5 +33,17 @@ class TestStrStack {
     assertEquals(1, testStack.size(), "Test the size of stack is 1 after a push");
 
   }
+  
+  //Test4
+  @Test
+  void testPushMultiple() {
+    testStack.push("Hello");
+    assertEquals(1, testStack.size(), "Test the size of stack is 1 after a push");
+    testStack.push("World");
+    assertEquals(2, testStack.size(), "Test the size of stack is 2 after a second push");
+    testStack.push("!");
+    assertEquals(3, testStack.size(), "Test the size of stack is 3 after a third push");
+    
+  }
 
 }
