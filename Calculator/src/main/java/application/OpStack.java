@@ -5,8 +5,8 @@ package application;
  */
 public class OpStack {
 
-  int size = 0;
-  Stack opStack = new Stack();
+  private int size = 0;
+  private Stack opStack = new Stack();
 
   /**
    * Retrieves the current size of the OpStack.
