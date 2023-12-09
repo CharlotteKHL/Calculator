@@ -53,9 +53,8 @@ class TestOpStack {
   @Test
   void testPushAndPop() throws EmptyStackException, BadTypeException {
     testStack.push(plus);
-    Symbol pop = testStack.pop();
+    assertEquals(Symbol.PLUS, testStack.pop(), "Test value popped off top of stack is the value pushed on");
     assertEquals(0, testStack.size(), "Test stack size is 0 after a push and pop");
-    assertEquals(Symbol.PLUS, pop, "Test value popped off top of stack is the value pushed on");
     
   }
   
@@ -66,16 +65,13 @@ class TestOpStack {
     testStack.push(Symbol.PLUS);
     testStack.push(Symbol.TIME);
     
-    Symbol pop = testStack.pop();
-    assertEquals(Symbol.TIME, pop, "Test pop value is equal to value pushed last");
+    assertEquals(Symbol.TIME, testStack.pop(), "Test pop value is equal to value pushed last");
     assertEquals(2, testStack.size(), "Test stack size is 2 after 3 push and pop");
     
-    pop = testStack.pop();
-    assertEquals(Symbol.PLUS, pop, "Test pop value is equal to value pushed second");
+    assertEquals(Symbol.PLUS, testStack.pop(), "Test pop value is equal to value pushed second");
     assertEquals(1, testStack.size(), "Test stack size is 1 after 3 push 2 pop");
 
-    pop = testStack.pop();
-    assertEquals(Symbol.DIVIDE, pop, "Test pop value is equal to value pushed first");
+    assertEquals(Symbol.DIVIDE, testStack.pop(), "Test pop value is equal to value pushed first");
     assertEquals(0, testStack.size(), "Test stack size is 0 after 3 push 3 pop");
 
   }
@@ -92,9 +88,8 @@ class TestOpStack {
   @Test
   void testTop() throws EmptyStackException, BadTypeException {
     testStack.push(Symbol.TIME);
-    Symbol top = testStack.top();
     assertEquals(1, testStack.size(), "Test size remains as 1 after top() called");
-    assertEquals(Symbol.TIME, top, "Test top value returns value pushed");
+    assertEquals(Symbol.TIME, testStack.top(), "Test top value returns value pushed");
     
   }
   
@@ -103,15 +98,13 @@ class TestOpStack {
   void testTopOfMany() throws EmptyStackException, BadTypeException {
     testStack.push(Symbol.DIVIDE);
     
-    Symbol top = testStack.top();
     assertEquals(1, testStack.size(), "Test size remains as 1 after top() called");
-    assertEquals(Symbol.DIVIDE, top, "Test top value returns value pushed");
+    assertEquals(Symbol.DIVIDE, testStack.top(), "Test top value returns value pushed");
     
     testStack.push(Symbol.MINUS);
     
-    top = testStack.top();
     assertEquals(2, testStack.size(), "Test size remains as 2 after top() called");
-    assertEquals(Symbol.MINUS, top, "Test top value returns value pushed second");
+    assertEquals(Symbol.MINUS, testStack.top(), "Test top value returns value pushed second");
     
     assertEquals(Symbol.MINUS, testStack.pop(), "Test that top does not remove the top value");
 
