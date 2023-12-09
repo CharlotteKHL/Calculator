@@ -90,12 +90,31 @@ class TestOpStack {
   
   //Test8
   @Test
-  void testTop() {
+  void testTop() throws EmptyStackException, BadTypeException {
     testStack.push(Symbol.TIME);
     Symbol top = testStack.top();
     assertEquals(1, testStack.size(), "Test size remains as 1 after top() called");
-    assertEquals(top, Symbol.TIME, "Test top value returns value pushed");
+    assertEquals(Symbol.TIME, top, "Test top value returns value pushed");
     
+  }
+  
+  //Test9
+  @Test
+  void testTopOfMany() throws EmptyStackException, BadTypeException {
+    testStack.push(Symbol.DIVIDE);
+    
+    Symbol top = testStack.top();
+    assertEquals(1, testStack.size(), "Test size remains as 1 after top() called");
+    assertEquals(Symbol.DIVIDE, top, "Test top value returns value pushed");
+    
+    testStack.push(Symbol.MINUS);
+    
+    top = testStack.top();
+    assertEquals(2, testStack.size(), "Test size remains as 2 after top() called");
+    assertEquals(Symbol.MINUS, top, "Test top value returns value pushed second");
+    
+    assertEquals(Symbol.MINUS, testStack.pop(), "Test that top does not remove the top value");
+
   }
   
 }

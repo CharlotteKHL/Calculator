@@ -41,8 +41,9 @@ public class OpStack {
     return returnEntry.getSymbol();
   }
 
-  public Symbol top() {
-    return Symbol.TIME;
+  public Symbol top() throws EmptyStackException, BadTypeException {
+    Entry top = opStack.top();
+    return top.getSymbol();
   }
 
 }
