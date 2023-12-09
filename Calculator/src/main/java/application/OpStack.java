@@ -41,6 +41,13 @@ public class OpStack {
     return returnEntry.getSymbol();
   }
 
+  /**
+   * Retrieves the value of the operator on the top of the stack without removing it.
+   * 
+   * @return Value of operator on the top of the stack
+   * @throws EmptyStackException if called on an empty OpStack
+   * @throws BadTypeException if getter for entry value does not match the type of the value
+   */
   public Symbol top() throws EmptyStackException, BadTypeException {
     Entry top = opStack.top();
     return top.getSymbol();
