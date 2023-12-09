@@ -45,5 +45,13 @@ class TestStrStack {
     assertEquals(3, testStack.size(), "Test the size of stack is 3 after a third push");
     
   }
+  
+  //Test5
+  @Test
+  void testPushAndPop(){
+    testStack.push("Hello World!");
+    assertEquals("Hello World!", testStack.pop(), "Test string popped off stack is the same as the string just pushed");
+    assertEquals(0, testStack.size(), "Test size of stack is 0 after a push and pop");
+  }
 
 }

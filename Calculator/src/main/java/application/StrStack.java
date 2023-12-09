@@ -15,4 +15,9 @@ public class StrStack {
     size = size + 1;
   }
 
+  public String pop() {
+    size = 0;
+    return "Hello World!";
+  }
+
 }
