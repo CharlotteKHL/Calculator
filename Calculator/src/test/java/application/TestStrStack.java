@@ -22,7 +22,16 @@ class TestStrStack {
   //Test2
   @Test
   void testEmptySize() {
-    assertEquals(testStack.size(), 0, "Test the size of an empty stack is 0");
+    assertEquals(0, testStack.size(), "Test the size of an empty stack is 0");
+  }
+  
+  //Test3
+  @Test
+  void testPush() {
+    assertEquals(0, testStack.size(), "Test the size of an empty stack is 0");
+    testStack.push("Hello World");
+    assertEquals(1, testStack.size(), "Test the size of stack is 1 after a push");
+
   }
 
 }
