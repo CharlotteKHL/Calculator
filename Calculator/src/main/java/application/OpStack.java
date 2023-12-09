@@ -41,4 +41,8 @@ public class OpStack {
     return returnEntry.getSymbol();
   }
 
+  public Symbol top() {
+    return Symbol.TIME;
+  }
+
 }

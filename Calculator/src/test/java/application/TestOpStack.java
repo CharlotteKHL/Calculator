@@ -88,4 +88,14 @@ class TestOpStack {
         + "Please check you are in the right calculation mode", e.getMessage(),"Test exception thrown when empty stack popped");
   }
   
+  //Test8
+  @Test
+  void testTop() {
+    testStack.push(Symbol.TIME);
+    Symbol top = testStack.top();
+    assertEquals(1, testStack.size(), "Test size remains as 1 after top() called");
+    assertEquals(top, Symbol.TIME, "Test top value returns value pushed");
+    
+  }
+  
 }
