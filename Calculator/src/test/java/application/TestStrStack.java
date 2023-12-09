@@ -48,10 +48,31 @@ class TestStrStack {
   
   //Test5
   @Test
-  void testPushAndPop(){
+  void testPushAndPop() throws EmptyStackException, BadTypeException {
     testStack.push("Hello World!");
     assertEquals("Hello World!", testStack.pop(), "Test string popped off stack is the same as the string just pushed");
     assertEquals(0, testStack.size(), "Test size of stack is 0 after a push and pop");
+  }
+  
+  //Test6
+  @Test
+  void testPushAndPopMultiple() throws EmptyStackException, BadTypeException {
+    testStack.push("Hello");
+    testStack.push("World");
+    testStack.push("!");
+    
+    assertEquals("!", testStack.pop(), "Test string popped off stack is the same as the string pushed last");
+    assertEquals(2, testStack.size(), "Test the size of stack is 2 after 3 push and 1 pop");
+
+    
+    assertEquals("World", testStack.pop(), "Test string popped off stack is the same as the string pushed second");
+    assertEquals(1, testStack.size(), "Test the size of stack is 1 after 3 push and 2 pop");
+
+    
+    assertEquals("Hello", testStack.pop(), "Test string popped off stack is the same as the string pushed first");
+    assertEquals(0, testStack.size(), "Test the size of stack is 0 after 3 push and 3 pop");
+
+
   }
 
 }
