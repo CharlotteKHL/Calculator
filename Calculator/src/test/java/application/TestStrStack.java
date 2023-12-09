@@ -85,10 +85,32 @@ class TestStrStack {
   
   //Test8
   @Test
-  void testTop() {
+  void testTop() throws EmptyStackException, BadTypeException {
     testStack.push("Hello");
     assertEquals("Hello", testStack.top(), "Test top of stack is the string most recently pushed");
     assertEquals(1, testStack.size(), "Test that size of stack remains unchanged");
+  }
+  
+  //Test9
+  @Test
+  void testPushManyAndTop() throws EmptyStackException, BadTypeException {
+    testStack.push("Hello");
+    assertEquals("Hello", testStack.top(), "Test top of stack is the string most recently pushed");
+    
+    testStack.push("World");
+    assertEquals("World", testStack.top(), "Test top of stack is the string pushed second");
+    
+    testStack.push("!");
+    assertEquals("!", testStack.top(), "Test top of stack is the string pushed third");
+    
+    assertEquals(3, testStack.size(), "Test that size of stack remains unchanged");
+    assertEquals("!", testStack.pop(), "Test that top of stack is not removed");
+    assertEquals("World", testStack.pop(), "Test that top of stack is not removed");
+    assertEquals("Hello", testStack.pop(), "Test that top of stack is not removed");
+
+
+
+    
   }
 
 }

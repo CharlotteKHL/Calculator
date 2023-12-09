@@ -36,8 +36,16 @@ public class StrStack {
     return returnString.getString();
   }
 
-  public String top() {
-    return "Hello";
+  /**
+   * Retrieves string from the top of the stack without removing it.
+   * 
+   * @return the value of the string on the top of the stack
+   * @throws EmptyStackException if called on an empty stack
+   * @throws BadTypeException if the type of the getter for an Entry does not match its type
+   */
+  public String top() throws EmptyStackException, BadTypeException {
+    Entry topString = strStack.top();
+    return topString.getString();
   }
 
 }
