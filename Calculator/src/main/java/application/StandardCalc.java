@@ -38,6 +38,14 @@ public class StandardCalc {
         case "*":
           values.push(Symbol.TIME);
           break;
+        
+        case "/":
+          if ((values.size() != 0) && (values.top() == Symbol.DIVIDE)) {
+            values.pop();
+            output = output + " /";
+          }
+          values.push(Symbol.DIVIDE);
+          break;
           
         case "+":
           values.push(Symbol.PLUS);
@@ -73,6 +81,9 @@ public class StandardCalc {
           break;
         case TIME:
           output = output + " *";
+          break;
+        case DIVIDE:
+          output = output + " /";
           break;
         default:
           output = output + " -";
