@@ -92,5 +92,13 @@ class TestStandardCalc {
     assertEquals(2f, testCalc.evaluate("8 / 2 - 2"), "Test that division has precedence over subtraction");
     assertEquals(6f , testCalc.evaluate("30 / 3 - 40 / 10 / 2 - 8 / 4"), "Test that division has precedence over subtraction in longer expressions");
   }
+  
+  //Test11
+  @Test
+  void testAddAndMinus() throws EmptyStackException, BadTypeException, InvalidExpressionException {
+    assertEquals(13f, testCalc.evaluate("10 - 2 + 5"), "Test simple subtraction and addition");
+    assertEquals(7f, testCalc.evaluate("8 + 2 - 2 + 4 + 8 - 9 - 4"), "Test complex subtraction and addition");
+    
+  }
 
 }
