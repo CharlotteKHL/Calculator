@@ -1,5 +1,8 @@
 package application;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  * Calculator responsible with evaluating expressions in Standard form.
  * 
@@ -15,6 +18,18 @@ public class StandardCalc {
   private OpStack values = new OpStack();
   private RevPolishCalc rpCalc = new RevPolishCalc();
   private String output;
+  private Map<Symbol, Integer> precedence = new HashMap<Symbol, Integer>();
+  
+  /**
+   * Constructor for StandardCalc, initialises precedence of operators in a HashMap.
+   */
+  public StandardCalc() {
+    precedence.put(Symbol.PLUS, 0);
+    precedence.put(Symbol.MINUS, 0);
+    precedence.put(Symbol.TIME, 1);
+    precedence.put(Symbol.DIVIDE, 1);
+    
+  }
 
   /**
    * Evaluates an expression in Standard form and returns answer.
@@ -48,6 +63,21 @@ public class StandardCalc {
           break;
           
         case "+":
+          if ((values.size() != 0) 
+              && (precedence.get(values.top()) >= precedence.get(Symbol.PLUS))) {
+            Symbol operator = values.pop();
+            
+            switch(operator) {
+              
+              case TIME:
+                output = output + " *";
+                break;
+              default:
+                output = output + " +";
+                
+            }
+    
+          }
           values.push(Symbol.PLUS);
           break;
 
