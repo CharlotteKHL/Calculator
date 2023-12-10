@@ -71,4 +71,12 @@ class TestStandardCalc {
     assertEquals(83f , testCalc.evaluate("2 * 5 * 8 + 1 * 3"), "Test that multiplication has precedence over addition in longer expressions");
   }
 
+  //Test8
+  @Test
+  void testMultiplyOverMinus() throws EmptyStackException, BadTypeException, InvalidExpressionException {
+    assertEquals(6f, testCalc.evaluate("2 * 4 - 2"), "Test that multiplication has precedence over subtraction");
+    assertEquals(20f , testCalc.evaluate("5 * 8 - 2 * 7 - 2 * 3"), "Test that multiplication has precedence over subtraction in longer expressions");
+
+  }
+
 }

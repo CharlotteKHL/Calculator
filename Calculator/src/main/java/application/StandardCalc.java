@@ -82,9 +82,20 @@ public class StandardCalc {
           break;
 
         case "-":
-          if ((values.size() != 0) && (values.top() == Symbol.MINUS)) {
-            values.pop();
-            output = output + " -";
+          while ((values.size() != 0) 
+              && (precedence.get(values.top()) >= precedence.get(Symbol.MINUS))) {
+            Symbol operator = values.pop();
+            
+            switch(operator) {
+              
+              case TIME:
+                output = output + " *";
+                break;
+              default:
+                output = output + " -";
+                
+            }
+    
           }
           values.push(Symbol.MINUS);
           break;
