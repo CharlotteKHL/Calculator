@@ -35,6 +35,10 @@ public class StandardCalc {
 
       switch (list[index]) {
 
+        case "*":
+          values.push(Symbol.TIME);
+          break;
+          
         case "+":
           values.push(Symbol.PLUS);
           break;
@@ -56,14 +60,19 @@ public class StandardCalc {
 
       }
     }
+    
+    int currentSize = values.size();
 
-    for (int index = 0; index <= values.size(); index++) {
+    for (int index = 0; index < currentSize; index++) {
       Symbol operator = values.pop();
 
       switch (operator) {
 
         case PLUS:
           output = output + " +";
+          break;
+        case TIME:
+          output = output + " *";
           break;
         default:
           output = output + " -";

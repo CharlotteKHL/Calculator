@@ -44,5 +44,15 @@ class TestStandardCalc {
     assertEquals(9f, testCalc.evaluate("15 - 3 - 2 - 1"), "Test 15 - 3 - 2 - 1 = 9");
 
   }
+  
+  //Test5
+  @Test 
+  void testEvaluateMultiplyMultiple() throws EmptyStackException, BadTypeException, InvalidExpressionException {
+    assertEquals(40f, testCalc.evaluate("8 * 5"), "Test 8*5 = 40");
+    assertEquals(0f, testCalc.evaluate("2 * 0"), "Test 2*0");
+    assertEquals(24f, testCalc.evaluate("3 * 2 * 4"), "Test 3*2*4 = 24");
+    assertEquals(300f, testCalc.evaluate("2 * 5 * 10 * 3"), "Test 2*5*10*3 = 300");
+
+  }
 
 }
