@@ -63,7 +63,7 @@ public class StandardCalc {
           break;
           
         case "+":
-          if ((values.size() != 0) 
+          while ((values.size() != 0) 
               && (precedence.get(values.top()) >= precedence.get(Symbol.PLUS))) {
             Symbol operator = values.pop();
             
