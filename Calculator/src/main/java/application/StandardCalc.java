@@ -51,11 +51,16 @@ public class StandardCalc {
       switch (list[index]) {
 
         case "*":
+          while ((values.size() != 0) 
+              && (precedence.get(values.top()) == precedence.get(Symbol.TIME))) {
+            addOpToOutput();
+          }
           values.push(Symbol.TIME);
           break;
         
         case "/":
-          if ((values.size() != 0) && (values.top() == Symbol.DIVIDE)) {
+          while ((values.size() != 0) 
+              && (precedence.get(values.top()) == precedence.get(Symbol.DIVIDE))) {
             addOpToOutput();
           }
           values.push(Symbol.DIVIDE);
