@@ -72,6 +72,9 @@ public class StandardCalc {
               case TIME:
                 output = output + " *";
                 break;
+              case DIVIDE:
+                output = output + " /";
+                break;
               default:
                 output = output + " +";
                 
