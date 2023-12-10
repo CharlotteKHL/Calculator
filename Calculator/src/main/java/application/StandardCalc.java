@@ -36,9 +36,9 @@ public class StandardCalc {
    * 
    * @param expression is the string to be evaluated
    * @return the result of the evaluation of the expression in standard form
-   * @throws BadTypeException if getter for Entry does not match type of object
-   * @throws EmptyStackException if pop or top called on an empty stack
-   * @throws InvalidExpressionException if expression is invalid in standard form
+   * @throws BadTypeException thrown if getter for Entry does not match type of object
+   * @throws EmptyStackException thrown if pop or top called on an empty stack
+   * @throws InvalidExpressionException thrown if expression is invalid in standard form
    */
   public float evaluate(String expression)
       throws EmptyStackException, BadTypeException, InvalidExpressionException {
@@ -56,8 +56,7 @@ public class StandardCalc {
         
         case "/":
           if ((values.size() != 0) && (values.top() == Symbol.DIVIDE)) {
-            values.pop();
-            output = output + " /";
+            addOpToOutput();
           }
           values.push(Symbol.DIVIDE);
           break;
@@ -65,20 +64,7 @@ public class StandardCalc {
         case "+":
           while ((values.size() != 0) 
               && (precedence.get(values.top()) >= precedence.get(Symbol.PLUS))) {
-            Symbol operator = values.pop();
-            
-            switch(operator) {
-              
-              case TIME:
-                output = output + " *";
-                break;
-              case DIVIDE:
-                output = output + " /";
-                break;
-              default:
-                output = output + " +";
-                
-            }
+            addOpToOutput();
     
           }
           values.push(Symbol.PLUS);
@@ -87,20 +73,7 @@ public class StandardCalc {
         case "-":
           while ((values.size() != 0) 
               && (precedence.get(values.top()) >= precedence.get(Symbol.MINUS))) {
-            Symbol operator = values.pop();
-            
-            switch(operator) {
-              
-              case TIME:
-                output = output + " *";
-                break;
-              case DIVIDE:
-                output = output + " /";
-                break;
-              default:
-                output = output + " -";
-                
-            }
+            addOpToOutput();
     
           }
           values.push(Symbol.MINUS);
@@ -119,27 +92,38 @@ public class StandardCalc {
     int currentSize = values.size();
 
     for (int index = 0; index < currentSize; index++) {
-      Symbol operator = values.pop();
-
-      switch (operator) {
-
-        case PLUS:
-          output = output + " +";
-          break;
-        case TIME:
-          output = output + " *";
-          break;
-        case DIVIDE:
-          output = output + " /";
-          break;
-        default:
-          output = output + " -";
-      }
+      addOpToOutput();
     }
 
     float answer = rpCalc.evaluate(output);
 
     return answer;
+  }
+  
+  /**
+   * Identifies the operator on the top of stack to add to expression to calculate it RevPolishForm.
+   * 
+   * @throws EmptyStackException thrown if pop or top called on an empty stack
+   * @throws BadTypeException thrown if getter for Entry does not match type of object
+   */
+  private void addOpToOutput() throws EmptyStackException, BadTypeException {
+    Symbol operator = values.pop();
+    
+    switch (operator) {
+
+      case PLUS:
+        output = output + " +";
+        break;
+      case TIME:
+        output = output + " *";
+        break;
+      case DIVIDE:
+        output = output + " /";
+        break;
+      default:
+        output = output + " -";
+    }
+    
   }
 
 }
