@@ -55,7 +55,17 @@ class TestCalcModel {
   //Test6
   @Test
   void testEvaluateStandard() throws InvalidExpressionException, BadTypeException, EmptyStackException {
-    assertEquals(20f, testCalc.evaluate("2 * 5 + 5 + 10 - 5", true), "Test 2 * 5 + 5 + 10 - 5 in standard form");
+    assertEquals(20f, testCalc.evaluate("2 * 5 + 5 + 10 - 5", true), "Test 2 * 5 + 5 + 10 - 5 = 20 in standard form");
+
+  }
+  
+  //Test7
+  @Test
+  void testEvaluateManyStandard() throws InvalidExpressionException, BadTypeException, EmptyStackException {
+    assertEquals(3.5f, testCalc.evaluate("2 / 4 + 3", true), "Test 0.5 + 3 = 3.5 in standard form");
+    assertEquals(6f, testCalc.evaluate("2 * 9 / 3", true), "Test 2*9/3 = 6 in standard form");
+    assertEquals(20f - 1f / 3f, testCalc.evaluate("20 - 2 / 6", true), "Test 20 - (1/6) in standard form");
+    assertEquals(51f, testCalc.evaluate("5 * 10 - 4 / 2 + 3", true), "Test (5*10) - (4/2) + 3 = 55 in standard form");
 
   }
 
