@@ -19,6 +19,8 @@ public class StandardCalc {
   private RevPolishCalc rpCalc = new RevPolishCalc();
   private String output;
   private Map<Symbol, Integer> precedence = new HashMap<Symbol, Integer>();
+  private static final String NULL_EXCEPTION = 
+      "Error: Current input is null";
   
   /**
    * Constructor for StandardCalc, initialises precedence of operators in a HashMap.
@@ -43,6 +45,10 @@ public class StandardCalc {
   public float evaluate(String expression)
       throws EmptyStackException, BadTypeException, InvalidExpressionException {
 
+    if (expression == null) {
+      throw new InvalidExpressionException(NULL_EXCEPTION);
+    }
+    
     String[] list = expression.split(" ");
     output = "";
 
