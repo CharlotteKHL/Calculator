@@ -33,6 +33,10 @@ public class RevPolishCalc {
       throw new InvalidExpressionException(NULL_EXCEPTION);
     }
     
+    while (stack.size() != 0) {
+      stack.pop();
+    }
+    
     String[] list = calculation.split(" ");
     
     for (int index = 0; index < list.length; index++) {

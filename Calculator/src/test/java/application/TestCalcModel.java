@@ -33,7 +33,7 @@ class TestCalcModel {
   
   //Test4
   @Test
-  void invalidRevPolishExpression() throws InvalidExpressionException, BadTypeException, EmptyStackException {
+  void testInvalidRevPolishExpression() throws InvalidExpressionException, BadTypeException, EmptyStackException {
     InvalidExpressionException e = assertThrows(InvalidExpressionException.class, () -> testCalc.evaluate("------ +", false));
     assertEquals(e.getMessage(), "Error: Current input contains invalid characters, please only use *,/,+,-");
   
@@ -46,10 +46,17 @@ class TestCalcModel {
     
   }
   
-  //Test16
+  //Test5
   @Test
   void testDivideByZero() throws InvalidExpressionException, BadTypeException, EmptyStackException {
      InvalidExpressionException e = assertThrows(InvalidExpressionException.class, () -> testCalc.evaluate("2 0 /", false));
+  }
+  
+  //Test6
+  @Test
+  void testEvaluateStandard() throws InvalidExpressionException, BadTypeException, EmptyStackException {
+    assertEquals(20f, testCalc.evaluate("2 * 5 + 5 + 10 - 5", true), "Test 2 * 5 + 5 + 10 - 5 in standard form");
+
   }
 
 }

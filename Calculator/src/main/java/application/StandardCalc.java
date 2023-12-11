@@ -52,6 +52,10 @@ public class StandardCalc {
       throw new InvalidExpressionException(NULL_EXCEPTION);
     }
     
+    while (values.size() != 0) {
+      values.pop();
+    }
+    
     String[] list = expression.split(" ");
     output = "";
 
