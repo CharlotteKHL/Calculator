@@ -21,6 +21,9 @@ public class StandardCalc {
   private Map<Symbol, Integer> precedence = new HashMap<Symbol, Integer>();
   private static final String NULL_EXCEPTION = 
       "Error: Current input is null";
+  private static final String POSTFIX_EXPRESSION_EXCEPTION = 
+      "Error: Current input is in Reverse polish form, "
+      + "please check you are in the right calculation mode";
   
   /**
    * Constructor for StandardCalc, initialises precedence of operators in a HashMap.
@@ -107,6 +110,10 @@ public class StandardCalc {
     }
 
     float answer = rpCalc.evaluate(output);
+    
+    if (output.equals(expression)) {
+      throw new InvalidExpressionException(POSTFIX_EXPRESSION_EXCEPTION);
+    }
 
     return answer;
   }

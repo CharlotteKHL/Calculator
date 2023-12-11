@@ -138,5 +138,12 @@ class TestStandardCalc {
     assertEquals("Error: Current input is null", e.getMessage(), "Test error thrown if input is null");
 
   }
-
+  
+  //Test16
+  @Test
+  void testRevPolishForm() throws EmptyStackException, BadTypeException, InvalidExpressionException {
+    InvalidExpressionException e = assertThrows(InvalidExpressionException.class, () -> testCalc.evaluate("8 4 /"));
+    assertEquals("Error: Current input is in Reverse polish form, please check you are in the right calculation mode", e.getMessage(), "Test error thrown if input is in wrong form");
+  
+  }
 }
