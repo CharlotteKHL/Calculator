@@ -11,7 +11,7 @@ import java.util.function.Consumer;
  * work together.
  * 
  * @author Dave Cohen (d.cohen@rhul.ac.uk)
- * @author Charlotte Lam
+ * @author modified by Charlotte Lam
  **/
 public interface ViewInterface {
 

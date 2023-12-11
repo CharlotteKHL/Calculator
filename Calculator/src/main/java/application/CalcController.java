@@ -7,7 +7,7 @@ import java.text.DecimalFormat;
  * The controller that sits between the calculator model that does actual evaluation and the view
  * that is the part the user interfaces with.
  * 
- * @author Charlotte Lam
+ * @author modified by Charlotte Lam
  */
 public class CalcController {
   private CalcModel myModel;

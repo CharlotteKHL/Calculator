@@ -3,7 +3,7 @@ package application;
 /**
  * Evaluates an expression - the evaluation can be Standard (infix) or reverse polish.
  * 
- * @author Charlotte Lam
+ * @author modified by Charlotte Lam
  */
 public class CalcModel implements Calculator {
 

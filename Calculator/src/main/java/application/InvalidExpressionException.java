@@ -3,7 +3,7 @@ package application;
 /**
  * An expression was passed to a method that could not be evaluated.
  * 
- * @author Charlotte Lam
+ * @author modified by Charlotte Lam
  */
 
 public class InvalidExpressionException extends Exception {
