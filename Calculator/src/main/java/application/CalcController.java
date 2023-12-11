@@ -13,7 +13,7 @@ public class CalcController {
   private CalcModel myModel;
   private ViewInterface myView;
   private static boolean isInfix = false;
-  private DecimalFormat df = new DecimalFormat("#.00");
+  private DecimalFormat df = new DecimalFormat("0.00");
 
   /**
    * Runs when an expression needs to be evaluated from the View.
