@@ -116,5 +116,19 @@ class TestStandardCalc {
     assertEquals((90f / 3f * 1f / 2f + 4f - 6f * 4f / 20f - 3f), testCalc.evaluate("90 / 3 * 1 / 2 + 4 - 6 * 4 / 20 - 3"), "Test complex expression evaluation");
   
   }
+  
+  //Test14
+  @Test
+  void testInvalidInput() throws EmptyStackException, BadTypeException, InvalidExpressionException {
+    InvalidExpressionException e = assertThrows(InvalidExpressionException.class, () -> testCalc.evaluate("Hello"));
+    assertEquals("Error: Current input contains invalid characters, please only use *,/,+,-", e.getMessage(), "Test error thrown if invalid symbols ar inputed");
+   
+    e = assertThrows(InvalidExpressionException.class, () -> testCalc.evaluate("3   +  4"));
+    assertEquals("Error: Current input contains too many empty spaces, "
+        + "please leave one space between numbers and symbols", e.getMessage(), "Test error thrown if input does not leave one space between numbers and symbols");
+    
+    e = assertThrows(InvalidExpressionException.class, () -> testCalc.evaluate("3 / 0"));
+    assertEquals("Error: Current input divides by 0", e.getMessage(), "Test error thrown if input attempts a division by 0");
+  }
 
 }
