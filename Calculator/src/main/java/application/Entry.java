@@ -48,9 +48,9 @@ public class Entry {
   /**
    * Getter for possible number value of Entry.
    * 
-   * @return Number value held 
+   * @return Number value held
    * @throws BadTypeException if type does not match Number
-   */ 
+   */
   public float getValue() throws BadTypeException {
     if (this.type == Type.NUMBER) {
       return this.number;
@@ -125,7 +125,7 @@ public class Entry {
     Entry other = (Entry) obj;
     return Float.floatToIntBits(number) == Float.floatToIntBits(other.number)
         // Check if Entry objects are equal only if their value and type are equal
-        && this.other == other.other && Objects.equals(str, other.str) && type == other.type; 
+        && this.other == other.other && Objects.equals(str, other.str) && type == other.type;
   }
 
   /**
@@ -133,7 +133,7 @@ public class Entry {
    */
   @Override
   public String toString() {
-    switch(this.type) {  // Checks type and returns corresponding message
+    switch (this.type) { // Checks type and returns corresponding message
       case STRING:
         return this.type + ", String: " + this.str;
       default:

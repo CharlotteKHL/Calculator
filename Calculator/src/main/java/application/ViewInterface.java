@@ -11,7 +11,7 @@ import java.util.function.Consumer;
  * work together.
  * 
  * @author Dave Cohen (d.cohen@rhul.ac.uk)
- * 
+ * @author modified by Charlotte Lam
  **/
 public interface ViewInterface {
 
@@ -38,9 +38,11 @@ public interface ViewInterface {
   /**
    * The controller should call this to display the evaluated answer to the user.
    */
-
   void setAnswer(String a);
   
+  /**
+   * The controller should call this to display a useful message to the user should an error occur.
+   */
   void setErrorMessage(String m);
 
   /**

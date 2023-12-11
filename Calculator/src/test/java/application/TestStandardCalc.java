@@ -122,10 +122,12 @@ class TestStandardCalc {
   void testInvalidInput() throws EmptyStackException, BadTypeException, InvalidExpressionException {
     InvalidExpressionException e = assertThrows(InvalidExpressionException.class, () -> testCalc.evaluate("Hello"));
     assertEquals("Error: Current input contains invalid characters, please only use *,/,+,-", e.getMessage(), "Test error thrown if invalid symbols are inputed");
-   
-    e = assertThrows(InvalidExpressionException.class, () -> testCalc.evaluate("3   +  4"));
+    
+    e = assertThrows(InvalidExpressionException.class, () -> testCalc.evaluate("3 +  4"));
     assertEquals("Error: Current input contains too many empty spaces, "
         + "please leave one space between numbers and symbols", e.getMessage(), "Test error thrown if input does not leave one space between numbers and symbols");
+
+    assertEquals(2f, testCalc.evaluate("1 + 1"), "Test normal expression evaluates right after error");
     
     e = assertThrows(InvalidExpressionException.class, () -> testCalc.evaluate("3 / 0"));
     assertEquals("Error: Current input divides by 0", e.getMessage(), "Test error thrown if input attempts a division by 0");

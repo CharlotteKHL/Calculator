@@ -2,6 +2,8 @@ package application;
 
 /**
  * Specialised stack class to store operators in a mathematical expression.
+ * 
+ * @author Charlotte Lam
  */
 public class OpStack {
 
