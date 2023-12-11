@@ -33,7 +33,7 @@ class TestCalcModel {
   
   //Test4
   @Test
-  void invalidRevPolishExpression() throws InvalidExpressionException, BadTypeException, EmptyStackException {
+  void testInvalidRevPolishExpression() throws InvalidExpressionException, BadTypeException, EmptyStackException {
     InvalidExpressionException e = assertThrows(InvalidExpressionException.class, () -> testCalc.evaluate("------ +", false));
     assertEquals(e.getMessage(), "Error: Current input contains invalid characters, please only use *,/,+,-");
   
@@ -46,10 +46,44 @@ class TestCalcModel {
     
   }
   
-  //Test16
+  //Test5
   @Test
   void testDivideByZero() throws InvalidExpressionException, BadTypeException, EmptyStackException {
      InvalidExpressionException e = assertThrows(InvalidExpressionException.class, () -> testCalc.evaluate("2 0 /", false));
+  }
+  
+  //Test6
+  @Test
+  void testEvaluateStandard() throws InvalidExpressionException, BadTypeException, EmptyStackException {
+    assertEquals(20f, testCalc.evaluate("2 * 5 + 5 + 10 - 5", true), "Test 2 * 5 + 5 + 10 - 5 = 20 in standard form");
+
+  }
+  
+  //Test7
+  @Test
+  void testEvaluateManyStandard() throws InvalidExpressionException, BadTypeException, EmptyStackException {
+    assertEquals(3.5f, testCalc.evaluate("2 / 4 + 3", true), "Test 0.5 + 3 = 3.5 in standard form");
+    assertEquals(6f, testCalc.evaluate("2 * 9 / 3", true), "Test 2*9/3 = 6 in standard form");
+    assertEquals(20f - 1f / 3f, testCalc.evaluate("20 - 2 / 6", true), "Test 20 - (1/6) in standard form");
+    assertEquals(51f, testCalc.evaluate("5 * 10 - 4 / 2 + 3", true), "Test (5*10) - (4/2) + 3 = 55 in standard form");
+
+  }
+  
+  //Test8
+  @Test
+  void testInvalidStandardExpression() throws InvalidExpressionException, BadTypeException, EmptyStackException {
+    InvalidExpressionException e = assertThrows(InvalidExpressionException.class, () -> testCalc.evaluate("Hello World", true));
+    assertEquals(e.getMessage(), "Error: Current input contains invalid characters, please only use *,/,+,-");
+  
+    e = assertThrows(InvalidExpressionException.class, () -> testCalc.evaluate("4 +  5", true));
+    assertEquals(e.getMessage(), "Error: Current input contains too many empty spaces, please leave one space between numbers and symbols");
+    
+    e = assertThrows(InvalidExpressionException.class, () -> testCalc.evaluate("4 / 0", true));
+    assertEquals(e.getMessage(), "Error: Current input divides by 0");
+    
+    e = assertThrows(InvalidExpressionException.class, () -> testCalc.evaluate("4 6 7 + +", true));
+    assertEquals(e.getMessage(), "Error: Current input is in Reverse polish form, please check you are in the right calculation mode");
+    
   }
 
 }

@@ -16,6 +16,7 @@ class TestCalcController {
     testView = new MockView();
     testModel = new CalcModel();
     testCalc = new CalcController(testModel, testView);
+    testView.setTypeToBeNotified.accept(OpType.REV_POLISH);
   }
   
   //Test1
