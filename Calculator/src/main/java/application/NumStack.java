@@ -2,10 +2,12 @@ package application;
 
 /**
  * NumStack class contains a stack specialised for floats.
+ * 
+ * @author Charlotte Lam
  */
 public class NumStack {
   private Stack numStack;
-  
+
   /**
    * Constructor initialises numStack field.
    */
@@ -31,7 +33,7 @@ public class NumStack {
     Entry newEntry = new Entry(value);
     numStack.push(newEntry);
   }
-  
+
   /**
    * Retrieves and removes the value at the top of the stack.
    * 
@@ -55,5 +57,5 @@ public class NumStack {
     Entry returnTop = numStack.top();
     return returnTop.getValue();
   }
-  
+
 }

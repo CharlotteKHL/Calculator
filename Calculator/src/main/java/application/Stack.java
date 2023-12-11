@@ -46,7 +46,7 @@ public class Stack {
     }
     size--;
     // Store entry to be removed in a temporary value to return
-    Entry returnValue = entries.get(size); 
+    Entry returnValue = entries.get(size);
     entries.remove(size);
     return returnValue;
   }
@@ -62,6 +62,6 @@ public class Stack {
       throw new EmptyStackException(EMPTY_STACK_MSG);
     }
     return entries.get(size - 1);
-  } 
+  }
 
 }

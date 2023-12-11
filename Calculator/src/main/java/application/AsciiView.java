@@ -59,7 +59,7 @@ public class AsciiView implements ViewInterface {
   public void setAnswer(String answer) {
     System.out.println("Answer is just around the corner");
   }
-  
+
   public void setErrorMessage(String message) {
     System.out.println("The following error has occured: " + message);
   }

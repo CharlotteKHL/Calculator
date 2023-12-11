@@ -6,12 +6,11 @@ import java.util.Map;
 /**
  * Calculator responsible with evaluating expressions in Standard form.
  * 
+ * @author Charlotte Lam
  * @author The below algorithm to evaluate is a simplified version of Dijkstra's shunting-yard
- *         algorithm used to convert infix notation to postfix.
- * 
- * @author Descriptions used to guide my programming can be found at these two links:
- *         https://www.chris-j.co.uk/parsing.php https://brilliant.org/wiki/shunting-yard-algorithm/
- * 
+ *         algorithm used to convert infix notation to postfix. Descriptions used to guide my
+ *         programming can be found at these two links: https://www.chris-j.co.uk/parsing.php,
+ *         https://brilliant.org/wiki/shunting-yard-algorithm/
  */
 public class StandardCalc {
 
@@ -19,12 +18,11 @@ public class StandardCalc {
   private RevPolishCalc rpCalc = new RevPolishCalc();
   private String output;
   private Map<Symbol, Integer> precedence = new HashMap<Symbol, Integer>();
-  private static final String NULL_EXCEPTION = 
-      "Error: Current input is null";
-  private static final String POSTFIX_EXPRESSION_EXCEPTION = 
+  private static final String NULL_EXCEPTION = "Error: Current input is null";
+  private static final String POSTFIX_EXPRESSION_EXCEPTION =
       "Error: Current input is in Reverse polish form, "
-      + "please check you are in the right calculation mode";
-  
+          + "please check you are in the right calculation mode";
+
   /**
    * Constructor for StandardCalc, initialises precedence of operators in a HashMap.
    */
@@ -33,7 +31,7 @@ public class StandardCalc {
     precedence.put(Symbol.MINUS, 0);
     precedence.put(Symbol.TIME, 1);
     precedence.put(Symbol.DIVIDE, 1);
-    
+
   }
 
   /**
@@ -51,11 +49,11 @@ public class StandardCalc {
     if (expression == null) {
       throw new InvalidExpressionException(NULL_EXCEPTION);
     }
-    
+
     while (values.size() != 0) {
       values.pop();
     }
-    
+
     String[] list = expression.split(" ");
     output = "";
 
@@ -64,35 +62,35 @@ public class StandardCalc {
       switch (list[index]) {
 
         case "*":
-          while ((values.size() != 0) 
+          while ((values.size() != 0)
               && (precedence.get(values.top()) == precedence.get(Symbol.TIME))) {
             addOpToOutput();
           }
           values.push(Symbol.TIME);
           break;
-        
+
         case "/":
-          while ((values.size() != 0) 
+          while ((values.size() != 0)
               && (precedence.get(values.top()) == precedence.get(Symbol.DIVIDE))) {
             addOpToOutput();
           }
           values.push(Symbol.DIVIDE);
           break;
-          
+
         case "+":
-          while ((values.size() != 0) 
+          while ((values.size() != 0)
               && (precedence.get(values.top()) >= precedence.get(Symbol.PLUS))) {
             addOpToOutput();
-    
+
           }
           values.push(Symbol.PLUS);
           break;
 
         case "-":
-          while ((values.size() != 0) 
+          while ((values.size() != 0)
               && (precedence.get(values.top()) >= precedence.get(Symbol.MINUS))) {
             addOpToOutput();
-    
+
           }
           values.push(Symbol.MINUS);
           break;
@@ -106,7 +104,7 @@ public class StandardCalc {
 
       }
     }
-    
+
     int currentSize = values.size();
 
     for (int index = 0; index < currentSize; index++) {
@@ -114,14 +112,14 @@ public class StandardCalc {
     }
 
     float answer = rpCalc.evaluate(output);
-    
+
     if (output.equals(expression)) {
       throw new InvalidExpressionException(POSTFIX_EXPRESSION_EXCEPTION);
     }
 
     return answer;
   }
-  
+
   /**
    * Identifies the operator on the top of stack to add to expression to calculate it RevPolishForm.
    * 
@@ -130,9 +128,8 @@ public class StandardCalc {
    */
   private void addOpToOutput() throws EmptyStackException, BadTypeException {
     Symbol operator = values.pop();
-    
-    switch (operator) {
 
+    switch (operator) {
       case PLUS:
         output = output + " +";
         break;
@@ -145,7 +142,7 @@ public class StandardCalc {
       default:
         output = output + " -";
     }
-    
+
   }
 
 }

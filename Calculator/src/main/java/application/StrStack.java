@@ -2,9 +2,11 @@ package application;
 
 /**
  * Specialised stack class to store String values.
+ * 
+ * @author Charlotte Lam
  */
 public class StrStack {
-  
+
   private Stack strStack = new Stack();
 
   public int size() {

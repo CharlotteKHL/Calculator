@@ -21,22 +21,20 @@ public class CalcController {
    */
   private void handleCalculation() {
     myView.setErrorMessage("");
-    
+
     String expression = myView.getExpression();
     try {
       float answer = myModel.evaluate(expression, isInfix);
       df.setRoundingMode(RoundingMode.HALF_EVEN);
       myView.setAnswer(df.format(answer));
-      
+
     } catch (InvalidExpressionException exception) {
       myView.setErrorMessage(exception.getMessage());
-    } 
-    catch (EmptyStackException exception) {
+    } catch (EmptyStackException exception) {
       myView.setErrorMessage(exception.getMessage());
-    } 
-    catch (BadTypeException exception) {
+    } catch (BadTypeException exception) {
       exception.printStackTrace();
-    } 
+    }
 
   }
 
@@ -62,12 +60,12 @@ public class CalcController {
   CalcController(CalcModel model, ViewInterface view) {
     myModel = model;
     myView = view;
-    
+
     myView.addCalculateObserver(this::handleCalculation);
     myView.addTypeObserver(this::handleTypeChange);
 
   }
-  
+
   /**
    * Getter for the model the controller is using.
    * 
@@ -76,7 +74,7 @@ public class CalcController {
   public CalcModel getModel() {
     return myModel;
   }
-  
+
   /**
    * Getter for the view the controller is using.
    * 
@@ -95,5 +93,5 @@ public class CalcController {
     return isInfix;
   }
 
-  
+
 }
