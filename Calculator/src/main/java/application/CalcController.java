@@ -1,5 +1,8 @@
 package application;
 
+import java.math.RoundingMode;
+import java.text.DecimalFormat;
+
 /**
  * The controller that sits between the calculator model that does actual evaluation and the view
  * that is the part the user interfaces with.
@@ -10,6 +13,7 @@ public class CalcController {
   private CalcModel myModel;
   private ViewInterface myView;
   private static boolean isInfix = false;
+  private DecimalFormat df = new DecimalFormat("#.00");
 
   /**
    * Runs when an expression needs to be evaluated from the View.
@@ -21,7 +25,9 @@ public class CalcController {
     String expression = myView.getExpression();
     try {
       float answer = myModel.evaluate(expression, isInfix);
-      myView.setAnswer("" + answer);
+      df.setRoundingMode(RoundingMode.HALF_EVEN);
+      myView.setAnswer(df.format(answer));
+      
     } catch (InvalidExpressionException exception) {
       myView.setErrorMessage(exception.getMessage());
     } 

@@ -13,13 +13,14 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<GridPane prefHeight="271.0" prefWidth="680.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.CalcView">
+<GridPane prefHeight="329.0" prefWidth="680.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.CalcView">
   <columnConstraints>
     <ColumnConstraints hgrow="SOMETIMES" maxWidth="94.0" minWidth="10.0" prefWidth="75.0" />
     <ColumnConstraints halignment="CENTER" hgrow="ALWAYS" maxWidth="1.7976931348623157E308" minWidth="10.0" prefWidth="500.6666666666667" />
       <ColumnConstraints halignment="CENTER" hgrow="ALWAYS" maxWidth="1.7976931348623157E308" minWidth="0.0" prefWidth="44.0" />
   </columnConstraints>
   <rowConstraints>
+      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
@@ -34,27 +35,28 @@
       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
       <RowConstraints maxHeight="30.0" minHeight="0.0" prefHeight="30.0" vgrow="SOMETIMES" />
-      <RowConstraints maxHeight="30.0" minHeight="0.0" prefHeight="0.0" vgrow="SOMETIMES" />
       <RowConstraints maxHeight="30.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="30.0" minHeight="0.0" prefHeight="0.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="14.0" minHeight="10.0" prefHeight="14.0" vgrow="SOMETIMES" />
       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
   </rowConstraints>
    <children>
-      <TextField id="inputField" fx:id="inputField" prefHeight="26.0" GridPane.columnIndex="1" GridPane.rowIndex="7" />
-      <TextField id="totalField" fx:id="totalField" editable="false" prefHeight="25.0" prefWidth="316.0" GridPane.columnIndex="1" GridPane.rowIndex="9" />
-      <Button id="calcButton" fx:id="calcButton" alignment="CENTER" disable="true" lineSpacing="2.0" minHeight="-Infinity" mnemonicParsing="false" onAction="#calculateClick" prefHeight="37.0" prefWidth="300.0" text="Calculate" textFill="#00a80e" GridPane.columnIndex="1" GridPane.columnSpan="2147483647" GridPane.halignment="CENTER" GridPane.rowIndex="17">
+      <TextField id="inputField" fx:id="inputField" prefHeight="26.0" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+      <TextField id="totalField" fx:id="totalField" editable="false" prefHeight="25.0" prefWidth="316.0" GridPane.columnIndex="1" GridPane.rowIndex="10" />
+      <Button id="calcButton" fx:id="calcButton" alignment="CENTER" disable="true" lineSpacing="2.0" minHeight="-Infinity" mnemonicParsing="false" onAction="#calculateClick" prefHeight="37.0" prefWidth="300.0" text="Calculate" textFill="#00a80e" GridPane.columnIndex="1" GridPane.columnSpan="2147483647" GridPane.halignment="CENTER" GridPane.rowIndex="18">
          <font>
             <Font size="18.0" />
          </font>
          <GridPane.margin>
             <Insets left="155.0" />
          </GridPane.margin></Button>
-      <Label text="Input: " GridPane.halignment="RIGHT" GridPane.rowIndex="7" />
-      <Label text="Answer: " GridPane.halignment="RIGHT" GridPane.rowIndex="9" />
-      <FlowPane alignment="CENTER" GridPane.columnSpan="2" GridPane.rowIndex="10" />
-      <ButtonBar prefHeight="25.0" prefWidth="339.0" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.rowIndex="13">
+      <Label text="Input: " GridPane.halignment="RIGHT" GridPane.rowIndex="8" />
+      <Label text="Answer: " GridPane.halignment="RIGHT" GridPane.rowIndex="10" />
+      <FlowPane alignment="CENTER" GridPane.columnSpan="2" GridPane.rowIndex="11" />
+      <ButtonBar prefHeight="25.0" prefWidth="339.0" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.rowIndex="14">
          <buttons>
             <ToggleButton fx:id="revPolishCalculatorButton" contentDisplay="CENTER" minWidth="69.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="155.0" selected="true" text="Reverse Polish">
                <toggleGroup>
@@ -64,12 +66,13 @@
             <ToggleButton fx:id="infixCalculatorButton" disable="true" mnemonicParsing="false" prefHeight="25.0" prefWidth="137.0" text="Standard" toggleGroup="$type" />
          </buttons>
       </ButtonBar>
-      <Label fx:id="errorLabel" textFill="RED" GridPane.columnSpan="2147483647" GridPane.halignment="LEFT" GridPane.rowIndex="11">
+      <Label fx:id="errorLabel" textFill="RED" GridPane.columnSpan="2147483647" GridPane.halignment="LEFT" GridPane.rowIndex="12">
          <padding>
             <Insets left="30.0" />
          </padding></Label>
-      <Label prefHeight="17.0" prefWidth="639.0" text="This is Version 3.0 of the calculator, please only use  +,-,*,/ and digits from 1-9" GridPane.columnIndex="1" GridPane.columnSpan="2147483647" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
-      <Label prefHeight="17.0" prefWidth="483.0" text="&gt; Reverse Polish form example:  5 6 7 + ∗ 2 − = 63.0" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.rowIndex="4" />
-      <Label prefHeight="17.0" prefWidth="374.0" text="&gt; Standard form example:  13 * 5 - 2 = 63.0" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.rowIndex="5" />
+      <Label prefHeight="17.0" prefWidth="639.0" text="This is Version 3.0 of the calculator, please only use  +,-,*,/ and digits from 1-9" GridPane.columnIndex="1" GridPane.columnSpan="2147483647" GridPane.halignment="LEFT" GridPane.rowIndex="2" />
+      <Label prefHeight="17.0" prefWidth="483.0" text="&gt; Reverse Polish form example:  5 6 7 + ∗ 2 − = 63.0" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.rowIndex="5" />
+      <Label prefHeight="17.0" prefWidth="374.0" text="&gt; Standard form example:  13 * 5 - 2 = 63.0" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.rowIndex="6" />
+      <Label prefHeight="17.0" prefWidth="353.0" text="All decimal answers are rounded to 2 decimal places" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.rowIndex="3" />
    </children>
 </GridPane>
