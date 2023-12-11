@@ -106,6 +106,15 @@ class TestStandardCalc {
   void testMultiplyAndDivide() throws EmptyStackException, BadTypeException, InvalidExpressionException {
     assertEquals(6f, testCalc.evaluate("10 * 3 / 5"), "Test simple division and multiplication");
     assertEquals(15f, testCalc.evaluate("80 / 2 * 5 / 8 / 5 * 3"), "Test complex division and multiplication");
+  
+  }
+  
+  //Test13
+  @Test
+  void testAllOperators() throws EmptyStackException, BadTypeException, InvalidExpressionException {
+    assertEquals((8f * 3f - 5f / 2f + 1f / 2f), testCalc.evaluate("8 * 3 - 5 / 2 + 1 / 2"), "Test simple expression evaluation");
+    assertEquals((90f / 3f * 1f / 2f + 4f - 6f * 4f / 20f - 3f), testCalc.evaluate("90 / 3 * 1 / 2 + 4 - 6 * 4 / 20 - 3"), "Test complex expression evaluation");
+  
   }
 
 }
