@@ -18,7 +18,18 @@ This Calculator currently has 3 releases, information on each one can be found i
 
 - Click the button of the form of calculation you would like to use
 
+# Running the Calculator:
 
+### Using the command line:
+
++ Have version 1.8 Maven and JavaSE-11 downloaded
++ Download this project
++ Open a command line and change directory until you are in the directory of the project
++ Run the following code in the command line:
+```
+  mvn clean compile javafx:run
+```
++ Enjoy your calculator!
 
 # Configuration for RELEASE 3.0 of this Calculator:
 
