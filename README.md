@@ -1,6 +1,6 @@
 This Calculator currently has 3 releases, information on each one can be found in [RELEASES NOTES.md](https://github.com/CharlotteKHL/Calculator/blob/main/RELEASES%20NOTES.md).
 
-# User manual for the most recent release of this Calculator:
+# User manual for RELEASE 3.0 of this Calculator:
 
 ### Operators:
 
@@ -20,7 +20,7 @@ This Calculator currently has 3 releases, information on each one can be found i
 
 
 
-# Configuration for the most recent release of this Calculator:
+# Configuration for RELEASE 3.0 of this Calculator:
 
 ### Tested and can be used on the following Operating Systems:
 - Linux
